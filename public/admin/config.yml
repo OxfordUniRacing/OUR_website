@@ -1,0 +1,155 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: "news"
+    label: "News Articles"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "Brief summary (max 200 characters)" }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "team-leadership"
+    label: "Team - Leadership"
+    folder: "content/team/leadership"
+    create: true
+    slug: "{{fields.name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "leadership" }
+      - { label: "Profile Image", name: "image", widget: "image", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "College", name: "college", widget: "string" }
+      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
+      - { label: "Bio", name: "body", widget: "markdown" }
+
+  - name: "team-aerodynamics"
+    label: "Team - Aerodynamics"
+    folder: "content/team/aerodynamics"
+    create: true
+    slug: "{{fields.name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "aerodynamics" }
+      - { label: "Profile Image", name: "image", widget: "image", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "College", name: "college", widget: "string" }
+      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
+      - { label: "Bio", name: "body", widget: "markdown" }
+
+  - name: "team-chassis"
+    label: "Team - Chassis"
+    folder: "content/team/chassis"
+    create: true
+    slug: "{{fields.name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "chassis" }
+      - { label: "Profile Image", name: "image", widget: "image", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "College", name: "college", widget: "string" }
+      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
+      - { label: "Bio", name: "body", widget: "markdown" }
+
+  - name: "team-powertrain"
+    label: "Team - Powertrain"
+    folder: "content/team/powertrain"
+    create: true
+    slug: "{{fields.name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "powertrain" }
+      - { label: "Profile Image", name: "image", widget: "image", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "College", name: "college", widget: "string" }
+      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
+      - { label: "Bio", name: "body", widget: "markdown" }
+
+  - name: "team-electronics"
+    label: "Team - Electronics"
+    folder: "content/team/electronics"
+    create: true
+    slug: "{{fields.name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "electronics" }
+      - { label: "Profile Image", name: "image", widget: "image", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "College", name: "college", widget: "string" }
+      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
+      - { label: "Bio", name: "body", widget: "markdown" }
+
+  - name: "team-operations"
+    label: "Team - Operations"
+    folder: "content/team/operations"
+    create: true
+    slug: "{{fields.name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "operations" }
+      - { label: "Profile Image", name: "image", widget: "image", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "College", name: "college", widget: "string" }
+      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
+      - { label: "Bio", name: "body", widget: "markdown" }
+
+  - name: "sponsors"
+    label: "Sponsors"
+    folder: "content/sponsors"
+    create: true
+    slug: "{{fields.name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Tier", name: "tier", widget: "select", options: ["title", "platinum", "gold", "silver", "bronze"] }
+      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Website", name: "website", widget: "string", required: false }
+      - { label: "Partner Since", name: "since", widget: "number", value_type: "int", required: false }
+      - { label: "Description", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{fields.title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+# Site settings
+site_url: https://oxforduniracing.com

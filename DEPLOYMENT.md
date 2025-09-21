@@ -1,296 +1,204 @@
-# Deployment Guide
+# Deployment Guide: Next.js to Vercel
 
-This guide covers deploying the Oxford University Racing website to production.
-
-## 🚀 Quick Deployment (Vercel)
-
-### Prerequisites
-
-- GitHub repository with the website code
-- Vercel account (free tier available)
-- Custom domain (optional)
-
-### Step 1: Connect to Vercel
-
-1. **Sign up for Vercel**
-   - Visit [vercel.com](https://vercel.com)
-   - Sign up with your GitHub account
-
-2. **Import Project**
-   - Click "New Project"
-   - Select your GitHub repository
-   - Click "Import"
-
-3. **Configure Build Settings**
-   - Framework Preset: Next.js
-   - Build Command: `npm run build`
-   - Output Directory: `.next`
-   - Install Command: `npm install`
-
-### Step 2: Environment Variables
-
-Add these environment variables in Vercel dashboard:
-
-```bash
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-NEXT_PUBLIC_GA_ID=your-google-analytics-id
-```
-
-### Step 3: Deploy
-
-1. Click "Deploy"
-2. Wait for build to complete (2-3 minutes)
-3. Your site will be live at `your-project.vercel.app`
-
-## 🌐 Custom Domain Setup
-
-### Adding Your Domain
-
-1. **In Vercel Dashboard**
-   - Go to Project Settings → Domains
-   - Add your custom domain (e.g., `oxforduniracing.com`)
-
-2. **Configure DNS**
-   - Point your domain's CNAME to `cname.vercel-dns.com`
-   - Or use Vercel nameservers for full DNS management
-
-3. **SSL Certificate**
-   - Vercel automatically provisions SSL certificates
-   - HTTPS will be available within minutes
-
-## 🔧 Decap CMS Setup
-
-### GitHub OAuth Setup
-
-1. **Create GitHub OAuth App**
-   - Go to GitHub Settings → Developer settings → OAuth Apps
-   - Click "New OAuth App"
-   - Fill in details:
-     - Application name: "Oxford Racing CMS"
-     - Homepage URL: `https://your-domain.com`
-     - Authorization callback URL: `https://your-domain.com/admin/`
-
-2. **Configure Decap CMS**
-   - Note your Client ID and Client Secret
-   - Add to Vercel environment variables:
-     ```bash
-     GITHUB_CLIENT_ID=your_client_id
-     GITHUB_CLIENT_SECRET=your_client_secret
-     ```
-
-3. **Enable Git Gateway**
-   - In your repository settings
-   - Go to Settings → Features
-   - Enable "Git Gateway"
-
-### Testing CMS Access
-
-1. Visit `your-domain.com/admin`
-2. Click "Login with GitHub"
-3. Authorize the application
-4. You should see the CMS dashboard
-
-## ⚙️ GitHub Actions Setup
-
-### Required Secrets
-
-Add these secrets to your GitHub repository:
-
-1. **Go to Repository Settings**
-   - Settings → Secrets and variables → Actions
-   - Add repository secrets:
-
-```bash
-VERCEL_TOKEN=your_vercel_token
-VERCEL_ORG_ID=your_vercel_org_id
-VERCEL_PROJECT_ID=your_vercel_project_id
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-```
-
-### Getting Vercel Credentials
-
-1. **Vercel Token**
-   - Vercel Dashboard → Settings → Tokens
-   - Create new token with appropriate scope
-
-2. **Organization ID**
-   - Vercel Dashboard → Settings → General
-   - Copy Organization ID
-
-3. **Project ID**
-   - Project Settings → General
-   - Copy Project ID
-
-## 🔒 Security Configuration
-
-### Content Security Policy
-
-Add to `next.config.js`:
-
-```javascript
-const securityHeaders = [
-  {
-    key: 'X-DNS-Prefetch-Control',
-    value: 'on'
-  },
-  {
-    key: 'Strict-Transport-Security',
-    value: 'max-age=63072000; includeSubDomains; preload'
-  },
-  {
-    key: 'X-XSS-Protection',
-    value: '1; mode=block'
-  },
-  {
-    key: 'X-Frame-Options',
-    value: 'DENY'
-  },
-  {
-    key: 'X-Content-Type-Options',
-    value: 'nosniff'
-  },
-  {
-    key: 'Referrer-Policy',
-    value: 'origin-when-cross-origin'
-  }
-]
-
-module.exports = {
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ]
-  },
-}
-```
-
-### Repository Access
-
-- Limit repository access to team members only
-- Use branch protection rules for main branch
-- Require pull request reviews for changes
-
-## 📊 Analytics Setup
-
-### Google Analytics
-
-1. **Create GA4 Property**
-   - Visit [analytics.google.com](https://analytics.google.com)
-   - Create new property for your domain
-
-2. **Add Tracking ID**
-   - Copy your Measurement ID (G-XXXXXXXXXX)
-   - Add to environment variables as `NEXT_PUBLIC_GA_ID`
-
-3. **Verify Installation**
-   - Use Google Analytics debugger
-   - Check real-time reports
-
-### Performance Monitoring
-
-Consider adding:
-- Vercel Analytics (built-in)
-- Web Vitals monitoring
-- Error tracking (Sentry)
+**Project**: Oxford University Racing Website Migration
+**Status**: Ready for Deployment
+**Target Platform**: Vercel
 
 ## 🚀 Deployment Checklist
 
-### Pre-Deployment
+### Prerequisites
+- ✅ Next.js project built successfully (`npm run build` completed)
+- ✅ Vercel CLI installed (`vercel --version` shows 48.1.0)
+- ✅ Project configuration files ready (vercel.json, next.config.js)
+- ✅ Domain ownership verified (oxforduniracing.com)
 
-- [ ] Test build locally (`npm run build`)
-- [ ] Check all environment variables
-- [ ] Verify all pages load correctly
-- [ ] Test CMS functionality
-- [ ] Review content for accuracy
-- [ ] Optimize images for web
+### Deployment Steps
 
-### Post-Deployment
+#### Step 1: Login to Vercel
+```bash
+vercel login
+```
+This will open your browser for authentication. Follow the prompts to connect your Vercel account.
 
-- [ ] Verify site loads at custom domain
-- [ ] Test CMS login and content editing
-- [ ] Check mobile responsiveness
-- [ ] Validate HTML and accessibility
-- [ ] Submit sitemap to search engines
-- [ ] Set up monitoring and alerts
+#### Step 2: Deploy to Production
+```bash
+vercel --prod
+```
 
-## 🔄 Continuous Deployment
+**Expected Output:**
+```
+Vercel CLI 48.1.0
+? Set up and deploy "~/Library/Mobile Documents/.../OUR_website"? (Y/n) y
+? Which scope should contain your project? [Team Name]
+? Link to existing project? (y/N) N
+? What's your project's name? oxford-university-racing
+? In which directory is your code located? ./
+? Want to modify these settings? (y/N) N
 
-### Automatic Deployments
+✅  Production: https://oxford-university-racing.vercel.app
+✅  Deployed to production. Check out your deployment at:
+https://oxford-university-racing.vercel.app
+```
 
-The site automatically deploys when:
-- Code is pushed to main branch
-- Content is updated via CMS
-- Pull requests are merged
+#### Step 3: Add Custom Domain
+```bash
+vercel domains add oxforduniracing.com
+```
 
-### Manual Deployment
+**Expected Output:**
+```
+✅  Domain oxforduniracing.com added to project oxford-university-racing
+✅  DNS records configured. Please update the following records in your DNS provider:
+A    @    76.76.19.61    (TTL: 300)
+CNAME    www    cname.vercel-dns.com    (TTL: 300)
+```
 
-To trigger manual deployment:
-1. Push any commit to main branch
-2. Or redeploy from Vercel dashboard
+#### Step 4: Verify Deployment
+```bash
+# Test the deployment
+curl -I https://oxford-university-racing.vercel.app
+curl -I https://oxforduniracing.com
+```
 
-## 📱 Testing & QA
+### DNS Configuration
 
-### Browser Testing
+#### Required DNS Records for oxforduniracing.com
 
-Test on:
-- Chrome (desktop/mobile)
-- Firefox (desktop/mobile)
-- Safari (desktop/mobile)
-- Edge (desktop)
+1. **A Record (Root Domain)**
+   ```
+   Type: A
+   Name: @ (or leave blank)
+   Value: 76.76.19.61
+   TTL: 300
+   ```
 
-### Performance Testing
+2. **CNAME Record (WWW Subdomain)**
+   ```
+   Type: CNAME
+   Name: www
+   Value: cname.vercel-dns.com
+   TTL: 300
+   ```
 
-- Run Lighthouse audits
-- Check Core Web Vitals
-- Test loading speeds
-- Verify image optimization
+### Environment Variables
 
-### Content Testing
+If your project requires environment variables, add them via:
+```bash
+vercel env add VARIABLE_NAME
+```
 
-- Test all CMS workflows
-- Verify content displays correctly
-- Check all internal links
-- Validate forms and contact info
+### Deployment Verification
 
-## 🚨 Troubleshooting
+#### Immediate Checks (Post-Deployment)
+- [ ] Website loads on Vercel preview URL
+- [ ] Website loads on custom domain
+- [ ] All pages accessible
+- [ ] Images loading correctly
+- [ ] Forms functional
+- [ ] Admin panel accessible at `/admin`
 
-### Build Failures
+#### Performance Verification
+- [ ] Lighthouse score > 90
+- [ ] Page load time < 2 seconds
+- [ ] Core Web Vitals green
+- [ ] No console errors
 
-Common issues:
-- TypeScript errors: Run `npm run type-check`
-- Missing dependencies: Check package.json
-- Environment variables: Verify all required vars set
+## 🔧 Troubleshooting
 
-### CMS Issues
+### Common Issues
 
-- **Can't login**: Check GitHub OAuth configuration
-- **Content not updating**: Verify webhook setup
-- **Images not uploading**: Check file size and format
+#### 1. Login Issues
+```bash
+# Clear Vercel config and re-login
+vercel logout
+vercel login
+```
 
-### Performance Issues
+#### 2. Build Failures
+```bash
+# Check build locally first
+npm run build
 
-- Enable Next.js image optimization
-- Implement proper caching headers
-- Optimize bundle size
-- Use CDN for static assets
+# Check for TypeScript errors
+npm run type-check
+```
 
-## 📞 Support
+#### 3. Domain Issues
+```bash
+# Check DNS propagation
+dig oxforduniracing.com A
+nslookup oxforduniracing.com 8.8.8.8
 
-### Emergency Contacts
+# Check SSL certificate
+curl -I https://oxforduniracing.com
+```
 
-- **Technical Lead**: technical@oxforduniracing.com
-- **Vercel Support**: [vercel.com/support](https://vercel.com/support)
-- **Domain Provider**: Contact your DNS provider
+#### 4. Environment Variables
+```bash
+# List environment variables
+vercel env ls
 
-### Documentation
+# Add missing variables
+vercel env add VARIABLE_NAME
+```
 
-- [Next.js Deployment](https://nextjs.org/docs/deployment)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Decap CMS Docs](https://decapcms.org/docs/)
+### Rollback Procedures
+
+#### Quick Rollback (if needed)
+```bash
+# Revert to previous deployment
+vercel rollback
+
+# Check deployment history
+vercel ls
+```
+
+## 📊 Monitoring & Analytics
+
+### Post-Deployment Monitoring
+- [ ] Set up uptime monitoring (recommended: https://uptimerobot.com/)
+- [ ] Configure error tracking
+- [ ] Set up performance monitoring
+- [ ] Verify Google Analytics tracking
+
+### Success Metrics
+- **Performance**: Page load time < 2 seconds
+- **Uptime**: 99.9% availability
+- **SEO**: All pages indexed properly
+- **User Experience**: No 404 errors
+
+## 📞 Support Contacts
+
+### During Deployment
+- **Vercel Support**: https://vercel.com/support
+- **Technical Lead**: [Your contact information]
+- **Team Principal**: [Team principal contact]
+
+### Emergency Rollback
+If critical issues occur within 2 hours of deployment, consider rolling back to Squarespace.
+
+## ✅ Post-Deployment Tasks
+
+### Immediate (Day 1)
+- [ ] Monitor site performance and uptime
+- [ ] Verify all redirects working
+- [ ] Check search console for crawl errors
+- [ ] Gather user feedback
+
+### Week 1
+- [ ] SEO performance analysis
+- [ ] User behavior analytics review
+- [ ] Performance optimization based on real usage
+
+### Month 1
+- [ ] Traffic analysis comparison
+- [ ] Search ranking review
+- [ ] Team adoption assessment
+- [ ] Documentation updates
 
 ---
+**Deployment Status**: Ready
+**Estimated Deployment Time**: 15-30 minutes
+**Expected Downtime**: < 1 hour (DNS propagation)
 
-*For additional support, create an issue in the GitHub repository or contact the development team.*
+**Ready for deployment when team leadership approves.**

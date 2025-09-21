@@ -1,0 +1,17 @@
+{
+  "name": "our-migration-scripts",
+  "version": "1.0.0",
+  "description": "Migration scripts for Oxford University Racing website",
+  "scripts": {
+    "audit": "node content-audit.js",
+    "optimize-images": "node image-optimizer.js",
+    "help": "echo 'Available commands: npm run audit, npm run optimize-images'"
+  },
+  "dependencies": {
+    "sharp": "^0.32.0"
+  },
+  "devDependencies": {},
+  "keywords": ["migration", "oxford-racing", "content"],
+  "author": "Oxford University Racing",
+  "license": "MIT"
+}

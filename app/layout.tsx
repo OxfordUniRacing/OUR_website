@@ -10,6 +10,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://oxforduniracing.com'),
   title: {
     default: 'Oxford University Racing - Formula Student Team',
     template: '%s | Oxford University Racing',

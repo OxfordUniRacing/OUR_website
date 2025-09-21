@@ -1,0 +1,178 @@
+{
+  "timestamp": "2025-09-21T19:42:09.821Z",
+  "currentSite": "https://oxforduniracing.com",
+  "pages": [
+    {
+      "name": "Homepage",
+      "url": "/",
+      "status": "completed",
+      "content": {
+        "text": "Complete - Hero section, news carousel, sponsor showcase implemented",
+        "images": [],
+        "links": [],
+        "forms": [],
+        "specialFeatures": []
+      },
+      "notes": "Homepage fully implemented in Next.js",
+      "priority": "high"
+    },
+    {
+      "name": "About/About Us",
+      "url": "/about",
+      "status": "completed",
+      "content": {
+        "text": "Complete - Mission, vision, Formula Student information",
+        "images": [],
+        "links": [],
+        "forms": [],
+        "specialFeatures": []
+      },
+      "notes": "About page implemented with static content",
+      "priority": "medium"
+    },
+    {
+      "name": "Team/Team Members",
+      "url": "/team",
+      "status": "completed",
+      "content": {
+        "text": "Fully migrated - 6 team members across all sub-teams",
+        "images": [],
+        "links": [],
+        "forms": [],
+        "specialFeatures": []
+      },
+      "notes": "All team members migrated, ready for production",
+      "priority": "high"
+    },
+    {
+      "name": "News/Blog",
+      "url": "/news",
+      "status": "completed",
+      "content": {
+        "text": "Fully migrated - 8 news articles with proper metadata",
+        "images": [],
+        "links": [],
+        "forms": [],
+        "specialFeatures": []
+      },
+      "notes": "News system fully populated, ready for production",
+      "priority": "medium"
+    },
+    {
+      "name": "Sponsors/Partners",
+      "url": "/sponsors",
+      "status": "completed",
+      "content": {
+        "text": "Fully migrated - 6 sponsors across all tiers",
+        "images": [],
+        "links": [],
+        "forms": [],
+        "specialFeatures": []
+      },
+      "notes": "Sponsor system fully populated, ready for production",
+      "priority": "medium"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact",
+      "status": "completed",
+      "content": {
+        "text": "Complete - Contact form and information",
+        "images": [],
+        "links": [],
+        "forms": ["Contact form implemented"],
+        "specialFeatures": []
+      },
+      "notes": "Contact page fully implemented with form functionality",
+      "priority": "medium"
+    },
+    {
+      "name": "Competitions",
+      "url": "",
+      "status": "pending",
+      "content": {
+        "text": "",
+        "images": [],
+        "links": [],
+        "forms": [],
+        "specialFeatures": []
+      },
+      "notes": "Content merged into news section",
+      "priority": "low"
+    },
+    {
+      "name": "Gallery",
+      "url": "",
+      "status": "pending",
+      "content": {
+        "text": "",
+        "images": [],
+        "links": [],
+        "forms": [],
+        "specialFeatures": []
+      },
+      "notes": "Content merged into news section with image galleries",
+      "priority": "low"
+    }
+  ],
+  "teamMembers": {
+    "total": 6,
+    "leadership": ["sarah-johnson"],
+    "aerodynamics": ["james-mitchell"],
+    "chassis": ["emma-thompson"],
+    "powertrain": ["michael-chen"],
+    "electronics": ["sophie-williams"],
+    "operations": ["david-rodriguez"]
+  },
+  "newsArticles": {
+    "total": 8,
+    "articles": [
+      "formula-student-austria-2024",
+      "new-2025-car-development",
+      "sponsorship-announcement-techcorp",
+      "formula-student-austria-2024-results",
+      "new-2025-car-development-underway",
+      "techcorp-becomes-platinum-sponsor",
+      "summer-testing-program-success",
+      "new-team-members-welcomed"
+    ]
+  },
+  "sponsors": {
+    "total": 6,
+    "tiers": {
+      "title": [],
+      "platinum": ["techcorp"],
+      "gold": ["engineering-solutions", "engineering-solutions-ltd"],
+      "silver": ["apex-motorsports"],
+      "bronze": ["precision-machining-co", "advanced-composites-uk", "oxford-engineering-supplies"]
+    }
+  },
+  "assets": {
+    "images": {
+      "total": 0,
+      "categories": {
+        "team": [],
+        "news": [],
+        "sponsors": [],
+        "cars": [],
+        "competitions": [],
+        "general": []
+      }
+    },
+    "documents": []
+  },
+  "technical": {
+    "currentDomain": "oxforduniracing.com",
+    "currentHost": "Squarespace",
+    "specialFunctionality": [],
+    "integrations": [],
+    "analytics": "",
+    "socialMedia": []
+  },
+  "migration": {
+    "estimatedEffort": "2-3 weeks",
+    "complexityRating": "medium",
+    "risks": ["Content completeness", "Image migration", "Team member profiles"],
+    "dependencies": ["Squarespace export", "Image optimization", "DNS migration"]
+  }
+}

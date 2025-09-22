@@ -1,15 +1,17 @@
-# Option 1: Use git-gateway with Netlify Identity (recommended)
+# Option 1: Use git-gateway with Netlify Identity (recommended for Netlify)
 backend:
   name: git-gateway
   branch: main
 
-# Option 2: Use GitHub backend directly (uncomment below and comment above)
+# Option 2: Use GitHub backend for Vercel (uncomment below and comment above)
 # backend:
 #   name: github
 #   repo: OxfordUniRacing/OUR_website
 #   branch: main
-#   base_url: https://api.netlify.com
-#   auth_endpoint: auth
+
+# Option 3: Use test-repo backend for local testing (uncomment for development)
+# backend:
+#   name: test-repo
 
 # For local development only (uncomment when testing locally)
 # local_backend: true
@@ -70,5 +72,5 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Content", name: "body", widget: "markdown" }
 
-# Site settings (update this to match your actual Netlify URL)
-site_url: https://oxforduniracing.com # Change this to your actual domain
+# Site settings (will be updated after Netlify deployment)
+site_url: https://oxforduniracing.netlify.app # Update this with your actual Netlify URL

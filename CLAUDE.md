@@ -27,6 +27,15 @@ This is the Oxford University Racing (OUR) website, a modern Next.js application
 
 This ensures the site remains functional and all changes are properly deployed.
 
+### Local CMS Development
+**To test CMS locally:**
+
+1. **Enable local backend**: Uncomment `local_backend: true` in `public/admin/config.yml`
+2. **Start CMS server**: Run `npx decap-server` in separate terminal (port 8081)
+3. **Start dev server**: Run `npm run dev` (port 3000/3001)
+4. **Access CMS**: Visit `http://localhost:3001/admin`
+5. **Before production**: Comment out `local_backend: true` and configure production authentication
+
 
 ## Architecture & Tech Stack
 

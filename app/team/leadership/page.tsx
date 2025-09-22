@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { getTeamMembersBySubteam } from '@/lib/content'
 import SectionTitle from '@/components/common/SectionTitle'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/common/Card'
-import { Button } from '@/components/common/Button'
+import Button from '@/components/common/Button'
 
 export const metadata: Metadata = {
   title: 'Leadership Team',

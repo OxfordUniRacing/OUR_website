@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Button from '@/components/common/Button'
 import { getSponsors } from '@/lib/content'
 
@@ -118,9 +119,11 @@ export default function HomePage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
                 {sponsors.slice(0, 8).map((sponsor) => (
                   <div key={sponsor.slug} className="flex items-center justify-center p-4">
-                    <img
+                    <Image
                       src={sponsor.logo}
                       alt={sponsor.name}
+                      width={120}
+                      height={64}
                       className="max-h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
                   </div>

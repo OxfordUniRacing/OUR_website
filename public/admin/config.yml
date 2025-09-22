@@ -1,6 +1,18 @@
+# Option 1: Use git-gateway with Netlify Identity (recommended)
 backend:
   name: git-gateway
   branch: main
+
+# Option 2: Use GitHub backend directly (uncomment below and comment above)
+# backend:
+#   name: github
+#   repo: OxfordUniRacing/OUR_website
+#   branch: main
+#   base_url: https://api.netlify.com
+#   auth_endpoint: auth
+
+# For local development only (uncomment when testing locally)
+# local_backend: true
 
 media_folder: public/images
 public_folder: /images
@@ -58,5 +70,5 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Content", name: "body", widget: "markdown" }
 
-# Site settings
-site_url: https://oxforduniracing.com
+# Site settings (update this to match your actual Netlify URL)
+site_url: https://oxforduniracing.com # Change this to your actual domain

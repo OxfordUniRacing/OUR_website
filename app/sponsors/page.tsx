@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import SectionTitle from '@/components/common/SectionTitle'
 import Button from '@/components/common/Button'
 import { getSponsors } from '@/lib/content'
@@ -65,18 +66,22 @@ export default function SponsorsPage() {
                     className="block"
                   >
                     <div className="h-24 flex items-center justify-center">
-                      <img
+                      <Image
                         src={sponsor.logo}
                         alt={`${sponsor.name} logo`}
+                        width={120}
+                        height={96}
                         className="max-h-full max-w-full object-contain transition-transform group-hover:scale-105"
                       />
                     </div>
                   </a>
                 ) : (
                   <div className="h-24 flex items-center justify-center">
-                    <img
+                    <Image
                       src={sponsor.logo}
                       alt={`${sponsor.name} logo`}
+                      width={120}
+                      height={96}
                       className="max-h-full max-w-full object-contain"
                     />
                   </div>

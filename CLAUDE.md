@@ -15,6 +15,18 @@ This is the Oxford University Racing (OUR) website, a modern Next.js application
 - `npm run lint` - Run ESLint
 - `npm run type-check` - Run TypeScript type checking
 
+### Deployment Workflow
+**IMPORTANT: Always follow this sequence after making changes:**
+
+1. **Test locally**: Run `npm run build` and `npm run type-check` to verify no errors
+2. **Stage changes**: `git add .`
+3. **Commit changes**: `git commit -m "Descriptive commit message"`
+4. **Push to repository**: `git push origin main`
+5. **Monitor deployment**: Watch CI/CD pipeline in GitHub Actions and Vercel/Netlify
+6. **Fix any failures**: If deployment fails, investigate and fix issues immediately
+
+This ensures the site remains functional and all changes are properly deployed.
+
 
 ## Architecture & Tech Stack
 

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import SectionTitle from '@/components/common/SectionTitle'
 import Button from '@/components/common/Button'
 import { Sponsor } from '@/lib/types'
@@ -58,19 +59,23 @@ export default function SponsorShowcase({ sponsors }: SponsorShowcaseProps) {
                   className="block w-full"
                 >
                   <div className="relative overflow-hidden rounded-lg bg-white p-6 shadow-sm transition-all group-hover:shadow-md h-24">
-                    <img
+                    <Image
                       src={sponsor.logo}
                       alt={`${sponsor.name} logo`}
-                      className="h-full w-full object-contain transition-transform group-hover:scale-105"
+                      fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
+                      className="object-contain transition-transform group-hover:scale-105"
                     />
                   </div>
                 </a>
               ) : (
                 <div className="relative overflow-hidden rounded-lg bg-white p-6 shadow-sm h-24 w-full">
-                  <img
+                  <Image
                     src={sponsor.logo}
                     alt={`${sponsor.name} logo`}
-                    className="h-full w-full object-contain"
+                    fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
+                    className="object-contain"
                   />
                 </div>
               )}

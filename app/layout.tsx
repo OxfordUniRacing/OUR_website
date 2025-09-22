@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import '@/styles/globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -71,6 +72,23 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <Script
+          src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+          strategy="afterInteractive"
+        />
+        <Script id="netlify-identity-init" strategy="afterInteractive">
+          {`
+            if (window.netlifyIdentity) {
+              window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                  window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                  });
+                }
+              });
+            }
+          `}
+        </Script>
       </body>
     </html>
   )

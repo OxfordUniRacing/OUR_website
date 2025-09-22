@@ -100,7 +100,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:contact@oxforduniracing.com"
+                  href="mailto:our@eng.ox.ac.uk"
                   className="hover:text-white transition-colors"
                 >
                   contact@oxforduniracing.com

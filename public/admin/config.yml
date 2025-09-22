@@ -41,7 +41,8 @@ collections:
     label: "Team Members"
     folder: "content/team"
     create: true
-    slug: "{{fields.subteam}}/{{fields.name}}"
+    slug: "{{subteam}}/{{name}}"
+    path: "{{subteam}}/{{slug}}"
     fields:
       - { label: "Name", name: "name", widget: "string", hint: "Full name of team member" }
       - { label: "Role", name: "role", widget: "string", hint: "Position or title (e.g., Team Principal, Lead Engineer)" }

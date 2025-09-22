@@ -8,8 +8,14 @@ export default function Header() {
       <div className="container-custom flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
-          <div className="h-10 w-10 rounded-full bg-oxford-blue flex items-center justify-center">
-            <span className="text-white font-bold text-lg">OUR</span>
+          <div className="relative h-12 w-24">
+            <Image
+              src="/images/general_assets/OUR+new+logo+white+on+transparent.png"
+              alt="Oxford University Racing"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <div className="hidden sm:block">
             <div className="text-xl font-bold text-oxford-blue">Oxford University Racing</div>

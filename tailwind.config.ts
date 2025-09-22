@@ -11,8 +11,10 @@ const config: Config = {
       colors: {
         oxford: {
           blue: '#002147',
-          red: '#FF0000',
-          silver: '#C0C0C0',
+          mauve: '#776885',
+          peach: '#E08D79',
+          green: '#426A5A',
+          royal: '#1D42A6',
         },
         primary: {
           DEFAULT: '#002147',
@@ -28,8 +30,10 @@ const config: Config = {
           900: '#00111f',
         },
         accent: {
-          red: '#FF0000',
-          silver: '#C0C0C0',
+          mauve: '#776885',
+          peach: '#E08D79',
+          green: '#426A5A',
+          royal: '#1D42A6',
         }
       },
       fontFamily: {

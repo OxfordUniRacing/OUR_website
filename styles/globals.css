@@ -79,7 +79,7 @@
   }
 
   .btn-accent {
-    @apply btn bg-accent-red text-white hover:bg-accent-red/90;
+    @apply btn bg-oxford-peach text-white hover:bg-accent-peach/90;
   }
 
   .card {

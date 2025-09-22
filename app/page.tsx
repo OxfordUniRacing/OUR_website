@@ -15,17 +15,28 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-oxford-blue">
-        <div className="container mx-auto px-6 py-24 sm:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-oxford-blue to-oxford-royal">
+        {/* Background Image */}
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="/images/general_assets/car+side.png"
+            alt="OUR Formula Student Car"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+
+        <div className="relative container mx-auto px-6 py-24 sm:py-32">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-lg">
               Welcome to Oxford University Racing
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-200 sm:text-xl">
+            <p className="mt-6 text-lg leading-8 text-gray-100 sm:text-xl drop-shadow">
               The University of Oxford's official team for the Formula Student racing competition
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="bg-oxford-peach hover:bg-accent-peach text-white">
                 <Link href="/about">Learn More</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-oxford-blue">
@@ -39,8 +50,39 @@ export default function HomePage() {
       {/* About the Team */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-oxford-blue">About Our Team</h2>
+
+            {/* Team Photo Gallery */}
+            <div className="mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="relative h-64 rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/general/MicrosoftTeams-image.jpg"
+                    alt="Team working together"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="relative h-64 rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/general_assets/hands+in.jpg"
+                    alt="Team unity"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="relative h-64 rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/general/20190720_143451.jpg"
+                    alt="Team at work"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-oxford-blue">Established in 2018</h3>
@@ -55,9 +97,9 @@ export default function HomePage() {
                   engineering challenge.
                 </p>
               </div>
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <h4 className="text-lg font-semibold mb-4 text-oxford-blue">Quick Facts</h4>
-                <ul className="space-y-2 text-gray-600">
+              <div className="bg-gradient-to-br from-oxford-blue to-oxford-royal p-8 rounded-lg text-white">
+                <h4 className="text-lg font-semibold mb-4">Quick Facts</h4>
+                <ul className="space-y-2">
                   <li>• 100+ student members</li>
                   <li>• Established in 2018</li>
                   <li>• Supported by Engineering Department</li>
@@ -70,35 +112,74 @@ export default function HomePage() {
       </section>
 
       {/* Formula Student Purpose */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold mb-8 text-oxford-blue">Formula Student Competition</h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              "The proving ground for the next generation of world class engineers, Formula Student
-              is an internationally renowned student motorsport competition."
-            </p>
-            <div className="mt-12 grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-oxford-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-lg">D</span>
+      <section className="py-16 bg-gray-50 relative">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <Image
+            src="/images/general_assets/Drawing2.jpg"
+            alt="Engineering drawings"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        <div className="relative container mx-auto px-6">
+          <div className="mx-auto max-w-6xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-8 text-oxford-blue">Formula Student Competition</h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                "The proving ground for the next generation of world class engineers, Formula Student
+                is an internationally renowned student motorsport competition."
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white p-8 rounded-lg shadow-lg text-center group hover:shadow-xl transition-shadow">
+                <div className="w-20 h-20 bg-gradient-to-br from-oxford-blue to-oxford-royal rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-white font-bold text-2xl">D</span>
                 </div>
-                <h3 className="font-semibold mb-2">Design</h3>
-                <p className="text-gray-600 text-sm">Research and develop innovative engineering solutions</p>
+                <h3 className="font-semibold mb-4 text-oxford-blue text-lg">Design</h3>
+                <p className="text-gray-600">Research and develop innovative engineering solutions</p>
+                <div className="mt-4 relative h-32 rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/general_assets/Aerodynamics.jpg"
+                    alt="Design process"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-oxford-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-lg">B</span>
+
+              <div className="bg-white p-8 rounded-lg shadow-lg text-center group hover:shadow-xl transition-shadow">
+                <div className="w-20 h-20 bg-gradient-to-br from-oxford-green to-oxford-mauve rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-white font-bold text-2xl">B</span>
                 </div>
-                <h3 className="font-semibold mb-2">Build</h3>
-                <p className="text-gray-600 text-sm">Manufacture and assemble our electric race car</p>
+                <h3 className="font-semibold mb-4 text-oxford-blue text-lg">Build</h3>
+                <p className="text-gray-600">Manufacture and assemble our electric race car</p>
+                <div className="mt-4 relative h-32 rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/general_assets/electric.jpg"
+                    alt="Building process"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-oxford-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-lg">R</span>
+
+              <div className="bg-white p-8 rounded-lg shadow-lg text-center group hover:shadow-xl transition-shadow">
+                <div className="w-20 h-20 bg-gradient-to-br from-oxford-peach to-oxford-royal rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-white font-bold text-2xl">R</span>
                 </div>
-                <h3 className="font-semibold mb-2">Race</h3>
-                <p className="text-gray-600 text-sm">Compete in international Formula Student events</p>
+                <h3 className="font-semibold mb-4 text-oxford-blue text-lg">Race</h3>
+                <p className="text-gray-600">Compete in international Formula Student events</p>
+                <div className="mt-4 relative h-32 rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/general_assets/OURdriver.jpg"
+                    alt="Racing"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -145,15 +226,15 @@ export default function HomePage() {
       </section>
 
       {/* Contact */}
-      <section className="py-16 bg-oxford-blue">
+      <section className="py-16 bg-gradient-to-br from-oxford-blue via-oxford-royal to-oxford-mauve">
         <div className="container mx-auto px-6">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold mb-8 text-white">Get Involved</h2>
-            <p className="text-lg text-gray-200 mb-8">
+            <p className="text-lg text-gray-100 mb-8">
               Interested in collaboration or sponsorship? We'd love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-oxford-blue">
+              <Button asChild size="lg" className="bg-oxford-peach hover:bg-accent-peach text-white">
                 <Link href="/contact">Contact Us</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-oxford-blue">

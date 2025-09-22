@@ -1,15 +1,15 @@
 # Option 1: Use git-gateway with Netlify Identity (recommended for Netlify)
-# backend:
-#   name: git-gateway
-#   branch: main
+backend:
+  name: git-gateway
+  branch: main
 
 # Option 2: Use GitHub backend for Vercel (uncomment below and comment above)
-backend:
-  name: github
-  repo: OxfordUniRacing/OUR_website
-  branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
+# backend:
+#   name: github
+#   repo: OxfordUniRacing/OUR_website
+#   branch: main
+#   base_url: https://api.netlify.com
+#   auth_endpoint: auth
 
 # Option 3: Use test-repo backend for local testing (uncomment for development)
 # backend:

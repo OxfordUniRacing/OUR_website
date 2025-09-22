@@ -18,8 +18,16 @@ backend:
 # For local development only (uncomment when testing locally)
 # local_backend: true
 
+# Media storage configuration
 media_folder: public/images
 public_folder: /images
+
+# For Cloudinary (uncomment when ready):
+# media_library:
+#   name: cloudinary
+#   config:
+#     cloud_name: your_cloud_name_here
+#     api_key: your_api_key_here
 
 collections:
   - name: "news"

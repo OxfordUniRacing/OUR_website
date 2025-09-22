@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['images.unsplash.com'], // Add your image domains here
+    domains: [
+      'images.unsplash.com',
+      'res.cloudinary.com', // Cloudinary
+      'i.imgur.com',        // Imgur
+      'imgur.com',          // Imgur
+      'github.com',         // GitHub assets
+      'raw.githubusercontent.com', // GitHub raw files
+    ],
     formats: ['image/webp', 'image/avif'],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

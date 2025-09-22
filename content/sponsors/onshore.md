@@ -1,5 +1,5 @@
 ---
-name: Onshore
-logo: /images/onshape-logo-rgb_color.png
+name: Onshape
+logo: /images/onshape-logo-cmyk_color.svg
 ---
 test

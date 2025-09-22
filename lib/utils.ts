@@ -35,24 +35,3 @@ export function getInitials(name: string): string {
     .slice(0, 2)
 }
 
-export function getSponsorTierColor(tier: string): string {
-  const colors = {
-    title: 'bg-yellow-500',
-    platinum: 'bg-gray-300',
-    gold: 'bg-yellow-400',
-    silver: 'bg-gray-400',
-    bronze: 'bg-orange-600',
-  }
-  return colors[tier as keyof typeof colors] || 'bg-gray-200'
-}
-
-export function getSponsorTierPriority(tier: string): number {
-  const priorities = {
-    title: 1,
-    platinum: 2,
-    gold: 3,
-    silver: 4,
-    bronze: 5,
-  }
-  return priorities[tier as keyof typeof priorities] || 999
-}

@@ -27,7 +27,6 @@ export interface NewsArticle {
 
 export interface Sponsor {
   name: string
-  tier: 'title' | 'platinum' | 'gold' | 'silver' | 'bronze'
   logo: string
   website?: string
   description?: string

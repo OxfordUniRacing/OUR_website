@@ -157,7 +157,6 @@ export function getSponsors(): Sponsor[] {
 
       const sponsor: Sponsor = {
         name: data.name,
-        tier: data.tier,
         logo: data.logo,
         website: data.website,
         description: content,
@@ -168,10 +167,7 @@ export function getSponsors(): Sponsor[] {
     }
   })
 
-  return sponsors.sort((a, b) => {
-    const tierOrder = { title: 1, platinum: 2, gold: 3, silver: 4, bronze: 5 }
-    return tierOrder[a.tier] - tierOrder[b.tier]
-  })
+  return sponsors.sort((a, b) => a.name.localeCompare(b.name))
 }
 
 export function getSponsor(slug: string): Sponsor | null {
@@ -182,7 +178,6 @@ export function getSponsor(slug: string): Sponsor | null {
 
     return {
       name: data.name,
-      tier: data.tier,
       logo: data.logo,
       website: data.website,
       description: content,

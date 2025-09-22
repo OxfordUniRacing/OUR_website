@@ -21,126 +21,33 @@ collections:
       - { label: "Featured", name: "featured", widget: "boolean", default: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "team-leadership"
-    label: "Team - Leadership"
-    folder: "content/team/leadership"
+  - name: "team"
+    label: "Team Members"
+    folder: "content/team"
     create: true
-    slug: "{{fields.name}}"
+    slug: "{{fields.subteam}}/{{fields.name}}"
     fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "leadership" }
-      - { label: "Profile Image", name: "image", widget: "image", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
-      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
-      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
-      - { label: "Course", name: "course", widget: "string" }
-      - { label: "College", name: "college", widget: "string" }
-      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
-      - { label: "Bio", name: "body", widget: "markdown" }
-
-  - name: "team-aerodynamics"
-    label: "Team - Aerodynamics"
-    folder: "content/team/aerodynamics"
-    create: true
-    slug: "{{fields.name}}"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "aerodynamics" }
-      - { label: "Profile Image", name: "image", widget: "image", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
-      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
-      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
-      - { label: "Course", name: "course", widget: "string" }
-      - { label: "College", name: "college", widget: "string" }
-      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
-      - { label: "Bio", name: "body", widget: "markdown" }
-
-  - name: "team-chassis"
-    label: "Team - Chassis"
-    folder: "content/team/chassis"
-    create: true
-    slug: "{{fields.name}}"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "chassis" }
-      - { label: "Profile Image", name: "image", widget: "image", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
-      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
-      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
-      - { label: "Course", name: "course", widget: "string" }
-      - { label: "College", name: "college", widget: "string" }
-      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
-      - { label: "Bio", name: "body", widget: "markdown" }
-
-  - name: "team-powertrain"
-    label: "Team - Powertrain"
-    folder: "content/team/powertrain"
-    create: true
-    slug: "{{fields.name}}"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "powertrain" }
-      - { label: "Profile Image", name: "image", widget: "image", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
-      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
-      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
-      - { label: "Course", name: "course", widget: "string" }
-      - { label: "College", name: "college", widget: "string" }
-      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
-      - { label: "Bio", name: "body", widget: "markdown" }
-
-  - name: "team-electronics"
-    label: "Team - Electronics"
-    folder: "content/team/electronics"
-    create: true
-    slug: "{{fields.name}}"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "electronics" }
-      - { label: "Profile Image", name: "image", widget: "image", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
-      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
-      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
-      - { label: "Course", name: "course", widget: "string" }
-      - { label: "College", name: "college", widget: "string" }
-      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
-      - { label: "Bio", name: "body", widget: "markdown" }
-
-  - name: "team-operations"
-    label: "Team - Operations"
-    folder: "content/team/operations"
-    create: true
-    slug: "{{fields.name}}"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Sub-team", name: "subteam", widget: "hidden", default: "operations" }
-      - { label: "Profile Image", name: "image", widget: "image", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
-      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
-      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 4 }
-      - { label: "Course", name: "course", widget: "string" }
-      - { label: "College", name: "college", widget: "string" }
-      - { label: "Joined Year", name: "joinedYear", widget: "number", value_type: "int" }
-      - { label: "Bio", name: "body", widget: "markdown" }
+      - { label: "Name", name: "name", widget: "string", hint: "Full name of team member" }
+      - { label: "Role", name: "role", widget: "string", hint: "Position or title (e.g., Team Principal, Lead Engineer)" }
+      - { label: "Sub-team", name: "subteam", widget: "select", options: ["leadership", "aerodynamics", "chassis", "powertrain", "electronics", "operations"], hint: "Which sub-team the member belongs to" }
+      - { label: "Profile Image", name: "image", widget: "image", required: false, hint: "Professional headshot (square format recommended)" }
+      - { label: "Email", name: "email", widget: "string", required: false, hint: "Contact email (optional)" }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: "LinkedIn profile URL (optional)" }
+      - { label: "Year of Study", name: "year", widget: "number", value_type: "int", min: 1, max: 5, hint: "Current year of study" }
+      - { label: "Course", name: "course", widget: "string", hint: "Degree program" }
+      - { label: "Bio", name: "body", widget: "markdown", hint: "Brief background, interests, and role description" }
 
   - name: "sponsors"
-    label: "Sponsors"
+    label: "Partners"
     folder: "content/sponsors"
     create: true
     slug: "{{fields.name}}"
     fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Tier", name: "tier", widget: "select", options: ["title", "platinum", "gold", "silver", "bronze"] }
-      - { label: "Logo", name: "logo", widget: "image" }
-      - { label: "Website", name: "website", widget: "string", required: false }
-      - { label: "Partner Since", name: "since", widget: "number", value_type: "int", required: false }
-      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Name", name: "name", widget: "string", hint: "Organization or company name" }
+      - { label: "Logo", name: "logo", widget: "image", hint: "Upload company logo (PNG/JPG, high resolution recommended)" }
+      - { label: "Website", name: "website", widget: "string", required: false, hint: "Company website URL (optional)" }
+      - { label: "Partner Since", name: "since", widget: "number", value_type: "int", required: false, hint: "Year partnership began (optional)" }
+      - { label: "Description", name: "body", widget: "markdown", hint: "Brief description of the organization and partnership" }
 
   - name: "pages"
     label: "Pages"

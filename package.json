@@ -7,14 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit",
-    "migration:audit": "node migration-scripts/content-audit.js",
-    "migration:optimize-images": "node migration-scripts/image-optimizer.js",
-    "migration:team": "node migration-scripts/migrate-team.js",
-    "migration:news": "node migration-scripts/migrate-news.js",
-    "migration:sponsors": "node migration-scripts/migrate-sponsors.js",
-    "migration:content": "npm run migration:team && npm run migration:news && npm run migration:sponsors",
-    "migration:help": "echo 'Available migration commands: npm run migration:audit, npm run migration:team, npm run migration:news, npm run migration:sponsors, npm run migration:content, npm run migration:optimize-images'"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "clsx": "^2.1.1",

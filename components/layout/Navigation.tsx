@@ -24,10 +24,11 @@ const navigationItems: NavigationItem[] = [
       { title: 'Operations', href: '/team/operations' },
     ],
   },
-  {
-    title: 'News',
-    href: '/news',
-  },
+  // Temporarily disabled
+  // {
+  //   title: 'News',
+  //   href: '/news',
+  // },
   {
     title: 'Sponsors',
     href: '/sponsors',

@@ -34,6 +34,10 @@ const navigationItems: NavigationItem[] = [
     href: '/sponsors',
   },
   {
+    title: 'Inclusion',
+    href: '/inclusion',
+  },
+  {
     title: 'Contact',
     href: '/contact',
   },

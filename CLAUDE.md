@@ -39,9 +39,14 @@ This is the Oxford University Racing (OUR) website, a modern Next.js application
 11. **Switch to main**: `git checkout main`
 12. **Merge feature**: `git merge feature/branch-name`
 13. **Push to main**: `git push origin main` - This does NOT auto-deploy
-14. **Manual production deploy**: Use Cloudflare Pages dashboard:
+14. **Push to `production` branch**: production is gated on a dedicated `production` branch — you MUST also fast-forward and push it:
+    - `git checkout production`
+    - `git merge --ff-only main`
+    - `git push origin production`
+    - then `git checkout main`
+15. **Manual production deploy**: Use Cloudflare Pages dashboard:
     - Go to Workers & Pages → OUR_website → Deployments
-    - Click "Create deployment" to manually deploy from main branch
+    - Click "Create deployment" to manually deploy from the `production` branch
 
 **ABSOLUTE REQUIREMENTS:**
 - NEVER start work without checking `git status` first

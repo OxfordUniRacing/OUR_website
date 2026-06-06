@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Button from '@/components/common/Button'
-import VideoBackground from '@/components/common/VideoBackground'
+import GradientBackground from '@/components/common/GradientBackground'
 import { getSponsors } from '@/lib/content'
 
 export const metadata: Metadata = {
@@ -15,9 +15,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero Section with Video Background */}
-      <VideoBackground
-        videoId="9KrlCkwmILc"
+      {/* Hero Section with Gradient Background */}
+      <GradientBackground
         className="min-h-screen flex items-center justify-center"
       >
         <div className="container mx-auto px-6">
@@ -54,7 +53,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </VideoBackground>
+      </GradientBackground>
 
       {/* What is Oxford Uni Racing Section */}
       <section className="py-16 bg-white">

@@ -9,10 +9,11 @@ The official website for Oxford University Racing, Oxford's Formula Student team
 Most content updates can be done through the Pages CMS without any technical knowledge:
 
 1. **Access the CMS**
-   - Fork the `main` branch on the `OxfordUniRacing/OUR_website` repository
+   - Create a feature branch of the `main` branch on the `OxfordUniRacing/OUR_website` repository
    - Visit [https://app.pagescms.org](https://app.pagescms.org)
    - Sign in with your GitHub account
-   - Select the `Your_GitHub_Username/OUR_website` repository
+   - Select the `OxfordUniRacing/OUR_website` repository
+   - **Important**: Select the your feature branch to edit 
 
 2. **What You Can Edit**
    - **News Articles**: Add race reports, updates, and announcements
@@ -23,8 +24,8 @@ Most content updates can be done through the Pages CMS without any technical kno
 3. **Making Changes**
    - Click on the content type you want to edit
    - Create new entries or edit existing ones
-   - Changes are saved directly to the `main` branch on your GitHub fork
-   - To commit these changes back to the `main` branch on the `OxfordUniRacing/OUR_Website` repository. Go to you fork on GitHub, select `Contribute` and then `Open pull request` then **Important** select the `main` branch on both the `OxfordUniRacing/OUR_Website` repository and your fork.
+   - Changes are saved directly to your feature branch on GitHub
+   - To commit these changes back to the `main` branch on the `OxfordUniRacing/OUR_Website` repository, go to your feature branch on GitHub and submit a pull request to `main` branch and someone test and approve your changes.
    - To publish changes to the live website, contact **Gareth Everton** to push to production
 
 ### Content Organization
@@ -52,7 +53,7 @@ Images should be placed in `public/images/` and organized by type:
 
 ### Publishing to Production
 
-Changes made through the CMS should be done in a fork of the `main` branch and merged back via pull request (see `Using the CMS` > `3. Making Changes`)
+Changes made through the CMS should be saved to a feature branch and merged back via pull request (see `Using the CMS` > `3. Making Changes`)
 
 **Contact Gareth Everton** to push changes from `main` to the `production` branch.
 
@@ -67,7 +68,7 @@ The site is deployed on Cloudflare Pages:
 
 **Main Branch**: `main`
 - Default branch for all content updates
-- Use this branch when editing through the CMS
+- Use this branch to branch from when editing through the CMS
 - Changes here do not immediately affect the live site
 
 ## Development Setup
@@ -79,31 +80,36 @@ The site is deployed on Cloudflare Pages:
 - Git
 
 ### Local Development
-1. Fork the respository:
-   Go to the `OxfordUniRacing/OUR_Website` repository and select `Fork`
+1. Create a branch:
+   Go to the `OxfordUniRacing/OUR_Website` repository and select create a branch (see [GitHub Documentation](https://docs.github.com/en/pull-requests/how-tos/commit-changes/managing-branches-within-your-repository#creating-a-branch-via-the-branches-overview))
 
-2. Clone your fork:
+2. Clone the repository:
    ```bash
-   git clone https://github.com/Your_GitHub_Username/OUR_website.git
+   git clone https://github.com/OxfordUniRacing/OUR_website.git
    cd OUR_website
    ```
 
-3. Install dependencies:
+3. Swap to your branch
+   ```bash
+   git checkout branch_name
+   ```
+
+4. Install dependencies:
    ```bash
    npm install
    ```
 
-4. Create `.env.local` file with environment variables:
+5. Create `.env.local` file with environment variables:
    ```bash
    NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=e99a186a-9e95-4aef-b4d9-f5c3562c882d
    ```
 
-5. Start development server:
+6. Start development server:
    ```bash
    npm run dev
    ```
 
-6. Open [http://localhost:3000](http://localhost:3000)
+7. Open [http://localhost:3000](http://localhost:3000)
 
 ### Available Commands
 
@@ -183,7 +189,7 @@ This is configured in Cloudflare Pages under Settings → Environment variables 
 
 ## Contributing
 
-1. Create a fork from `main`
+1. Create a branch from `main`
 2. Make your changes
 3. Test locally with `npm run build` and `npm run type-check`
 4. Create a pull request to `main`

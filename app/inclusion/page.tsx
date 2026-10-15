@@ -124,18 +124,18 @@ export default function InclusionPage() {
               Welfare &amp; Inclusion Officer
             </h2>
             <p className="mb-4">
-              <span className="font-semibold">Jon Soepadmo</span>, in
-              addition to his role as Technical Manager, serves as Oxford
+              <span className="font-semibold">Seb Coxon-Vadillo</span>, in
+              addition to his role as Team Principal, serves as Oxford
               University Racing&apos;s Welfare &amp; Inclusion Officer.
               He is the team&apos;s confidential first point of contact
               for any member who wants to raise a concern about welfare,
               inclusion, or conduct.
             </p>
             <p className="mb-4">
-              Concerns can be raised informally with Jon, formally in
-              writing to the Team Principal, or externally to the
-              Department of Engineering Science Welfare Lead or the
-              University Harassment Service. Reports are kept confidential
+              Concerns can be raised informally with Seb, formally in
+              writing, or externally to the Department of
+              Engineering Science Welfare Lead or the University
+              Harassment Service. Reports are kept confidential
               and retaliation against anyone raising a concern in good
               faith is itself a breach of the Code.
             </p>

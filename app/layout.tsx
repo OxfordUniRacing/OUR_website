@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   keywords: ['Oxford University', 'Formula Student', 'Racing', 'Engineering', 'Motorsport'],
   authors: [{ name: 'Oxford University Racing' }],
   creator: 'Oxford University Racing',
+  icons: {
+    icon: '/images/general_assets/icon.ico',
+    apple: '/images/general_assets/apple-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',

@@ -84,11 +84,11 @@ export default function Footer() {
                   Team
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/news" className="text-gray-300 hover:text-white transition-colors">
                   News
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/sponsors" className="text-gray-300 hover:text-white transition-colors">
                   Sponsors

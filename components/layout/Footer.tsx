@@ -115,7 +115,7 @@ export default function Footer() {
                   href="mailto:our@eng.ox.ac.uk"
                   className="hover:text-white transition-colors"
                 >
-                  contact@oxforduniracing.com
+                  our@eng.ox.ac.uk
                 </a>
               </li>
             </ul>

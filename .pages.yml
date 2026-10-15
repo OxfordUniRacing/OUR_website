@@ -142,21 +142,11 @@ content:
         description: Year partnership began (optional)
       - name: order
         label: Display Position
-        type: select
+        type: number
         required: true
-        default: "1"
+        default: 1
         options:
-          values:
-            - "1"
-            - "2"
-            - "3"
-            - "4"
-            - "5"
-            - "6"
-            - "7"
-            - "8"
-            - "9"
-            - "10"
+          min: 1
         description: Position on the page (1 = first, 2 = second, etc.). If multiple sponsors have the same position, they will be sorted alphabetically.
       - name: body
         label: Description

@@ -139,12 +139,12 @@ export default function Footer() {
               © {new Date().getFullYear()} Oxford University Racing. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 sm:mt-0">
-              <Link href="/privacy" className="text-gray-300 hover:text-white text-sm transition-colors">
+              <Link href="https://eng.ox.ac.uk/privacy-policy" className="text-gray-300 hover:text-white text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-300 hover:text-white text-sm transition-colors">
+              {/* <Link href="/terms" className="text-gray-300 hover:text-white text-sm transition-colors">
                 Terms of Service
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

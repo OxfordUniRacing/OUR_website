@@ -313,7 +313,7 @@ export default function TeamPage() {
             </Link>
           </div>
           <p className="text-gray-600 mb-6">
-            The Operations Team manages the logistics and manufacturing processes that keep our project running smoothly. From sourcing materials to organizing build schedules, they ensure that every team has what they need to succeed and that our car is built to the highest quality standards.
+            The Operations Team manages the logistics, manufacturing and communications that keep our project running smoothly. From sourcing materials and organizing build schedules to managing social media and corporate sponsorship, they ensure that every team has what they need to succeed and that our car is built to the highest quality standards.
           </p>
           <TeamMemberCards members={operationsMembers} />
           <div className="text-sm text-gray-500">

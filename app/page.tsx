@@ -62,7 +62,7 @@ export default function HomePage() {
             {/* Left side - Image */}
             <div className="order-2 lg:order-1">
               <Image
-                src="/images/general/IMG_1004.JPG"
+                src="/images/general/IMG_1004.jpg"
                 alt="Oxford University Racing team with their Formula Student car"
                 width={600}
                 height={400}

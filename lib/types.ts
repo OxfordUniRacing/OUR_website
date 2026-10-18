@@ -24,7 +24,7 @@ export interface Car {
   overallPlace: string
   designPlace: string
   costPlace: string
-  buisinessPlace: string
+  businessPlace: string
   accelerationPlace?: string
   skidpadPlace?: string
   sprintPlace?: string

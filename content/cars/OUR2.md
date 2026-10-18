@@ -7,6 +7,6 @@ weight: 0
 overallPlace: 55th
 designPlace: 56th
 costPlace: 44th
-buisinessPlace: 43rd
+businessPlace: 43rd
 ---
 To be added later

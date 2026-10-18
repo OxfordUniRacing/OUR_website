@@ -7,7 +7,7 @@ weight: 275
 overallPlace: 23rd
 designPlace: 47th
 costPlace: 11th
-buisinessPlace: 33rd
+businessPlace: 33rd
 sprintPlace: 11th
 endurancePlace: 24th
 ---

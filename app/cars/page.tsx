@@ -125,7 +125,7 @@ export default function CarsPage() {
                       <div className="flex items-center justify-between gap-3">
                         <span className="text-gray-600">Business</span>
                         <span className="font-semibold text-oxford-blue">
-                          {car.buisinessPlace}
+                          {car.businessPlace}
                         </span>
                       </div>
 

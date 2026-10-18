@@ -60,7 +60,7 @@ content:
         type: string
         required: true
         description: Cost place in the competition (e.g., 1st for first place)
-      - name: buisinessPlace
+      - name: businessPlace
         label: Business Place
         type: string
         required: true

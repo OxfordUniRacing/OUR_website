@@ -54,15 +54,9 @@ export default function CarsPage() {
                 )}
 
                 <CardHeader>
-                  <div className="mb-2 flex items-center gap-2 text-sm text-gray-500">
-                    <span>{car.season} season</span>
-                    {car.carNumber != null && (
-                      <>
-                        <span>•</span>
-                        <span>Car #{car.carNumber}</span>
-                      </>
-                    )}
-                  </div>
+                  <p className="text-sm text-gray-500">
+                    {car.season} season
+                  </p>
 
                   <CardTitle className="text-xl">
                     <Link
@@ -76,41 +70,93 @@ export default function CarsPage() {
                   <CardDescription>{car.excerpt}</CardDescription>
                 </CardHeader>
 
-                <CardContent>
-                  {(car.weight != null) && (
-                    <div className="mb-4 grid grid-cols-2 gap-3 text-sm">
-                      {car.weight != null && (
-                        <div>
-                          <p className="text-gray-500">Weight</p>
-                          <p className="font-medium text-oxford-blue">
-                            {car.weight} kg
-                          </p>
-                        </div>
-                      )}
+                <CardContent className="space-y-6">
+                  {/* Technical Specifications */}
+                  <div>
+                    <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">
+                      Specifications
+                    </h3>
 
-                      {/* {car.peakPower != null && (
-                        <div>
-                          <p className="text-gray-500">Peak power</p>
-                          <p className="font-medium text-oxford-blue">
-                            {car.peakPower} kW
-                          </p>
-                        </div>
-                      )} */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="rounded-md bg-gray-50 p-3">
+                        <p className="text-sm text-gray-500">Weight</p>
+                        <p className="font-semibold text-oxford-blue">
+                          {car.weight} kg
+                        </p>
+                      </div>
+
+                      {/* <div className="rounded-md bg-gray-50 p-3">
+                        <p className="text-sm text-gray-500">Peak power</p>
+                        <p className="font-semibold text-oxford-blue">
+                          {car.peakPower} kW
+                        </p>
+                      </div> */}
                     </div>
-                  )}
+                  </div>
 
-                  {car.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                      {car.tags.slice(0, 3).map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded bg-gray-100 px-2 py-1 text-xs text-gray-700"
-                        >
-                          {tag}
+                  {/* Competition Results */}
+                  <div>
+                    <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">
+                      Competition Results
+                    </h3>
+
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-gray-600">Overall</span>
+                        <span className="font-semibold text-oxford-blue">
+                          {car.overallPlace}
                         </span>
-                      ))}
+                      </div>
+
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-gray-600">Design</span>
+                        <span className="font-semibold text-oxford-blue">
+                          {car.designPlace}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-gray-600">Cost</span>
+                        <span className="font-semibold text-oxford-blue">
+                          {car.costPlace}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-gray-600">Business</span>
+                        <span className="font-semibold text-oxford-blue">
+                          {car.buisinessPlace}
+                        </span>
+                      </div>
+
+                      {[
+                        ['Acceleration', car.accelerationPlace],
+                        ['Skidpad', car.skidpadPlace],
+                        ['Sprint', car.sprintPlace],
+                        ['Endurance', car.endurancePlace],
+                      ].map(
+                        ([event, place]) =>
+                          place && (
+                            <div
+                              key={event}
+                              className="flex items-center justify-between gap-3"
+                            >
+                              <span className="text-gray-600">{event}</span>
+                              <span className="font-semibold text-oxford-blue">
+                                {place}
+                              </span>
+                            </div>
+                          )
+                      )}
                     </div>
-                  )}
+                  </div>
+
+                  <Link
+                    href={`/cars/${car.slug}`}
+                    className="inline-block text-sm font-medium text-oxford-blue transition-colors hover:text-accent-red"
+                  >
+                    Explore car details →
+                  </Link>
                 </CardContent>
               </Card>
             ))}

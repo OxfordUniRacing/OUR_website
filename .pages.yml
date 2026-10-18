@@ -97,7 +97,9 @@ content:
     label: News Articles
     path: content/news
     type: collection
-    filename: "{year}-{month}-{day}-{slug}"
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: create
     fields:
       - name: title
         label: Title
@@ -141,6 +143,9 @@ content:
     label: Team Members
     path: content/team
     type: collection
+    filename:
+      template: "{primary}.md"
+      field: create
     fields:
       - name: name
         label: Name

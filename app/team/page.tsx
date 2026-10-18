@@ -48,14 +48,59 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
 
   // Split into first row (2 items) and remaining rows (3 items each)
   const firstRow = displayMembers.slice(0, 2)
-  const remainingRows = displayMembers.slice(2)
+
+  const remainingCount = displayMembers.length - firstRow.length
+  const finalRowCount = remainingCount % 3 || Math.min(remainingCount, 3)
+
+  const middleRows = displayMembers.slice(
+    2,
+    displayMembers.length - finalRowCount
+  )
+
+  const finalRow = displayMembers.slice(
+    displayMembers.length - finalRowCount
+  )
 
   return (
     <div className="flex flex-col items-center mb-6 gap-4">
-      {/* First row with 2 cards */}
+      {/* First row with up to 2 cards */}
       {firstRow.length > 0 && (
-        <div className="grid gap-4 md:grid-cols-2 max-w-3xl w-full">
+        <div className="flex w-full max-w-5xl flex-wrap justify-center gap-4">
           {firstRow.map((member) => (
+            <div
+              key={member.slug}
+              className="w-full rounded-lg border border-gray-300 bg-white p-4 shadow-sm sm:w-[calc(50%_-_0.5rem)] lg:w-[calc(33.333%_-_0.667rem)]"
+            >
+              {member.image && (
+                <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              <div className="text-center">
+                <h3 className="text-lg font-semibold">{member.name}</h3>
+                <p className="text-sm text-gray-600">{member.role}</p>
+                <div className="text-sm text-gray-500">
+                  {member.course} • Year {member.year}
+                </div>
+                {member.bio && (
+                  <div className="mt-2 text-sm text-gray-600">{member.bio}</div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Remaining rows with 3 cards */}
+      {middleRows.length > 0 && (
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl w-full">
+          {middleRows.map((member) => (
             <div key={member.slug} className="border border-gray-300 bg-white rounded-lg shadow-sm p-4">
               {member.image && (
                 <div className="relative w-full h-48 overflow-hidden rounded-t-lg mb-4">
@@ -82,17 +127,21 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
         </div>
       )}
 
-      {/* Remaining rows with 3 cards */}
-      {remainingRows.length > 0 && (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl w-full">
-          {remainingRows.map((member) => (
-            <div key={member.slug} className="border border-gray-300 bg-white rounded-lg shadow-sm p-4">
+      {/* Final row with 1–3 cards */}
+      {finalRow.length > 0 && (
+        <div className="flex w-full max-w-5xl flex-wrap justify-center gap-4">
+          {finalRow.map((member) => (
+            <div
+              key={member.slug}
+              className="w-full rounded-lg border border-gray-300 bg-white p-4 shadow-sm sm:w-[calc(50%_-_0.5rem)] lg:w-[calc(33.333%_-_0.667rem)]"
+            >
               {member.image && (
-                <div className="relative w-full h-48 overflow-hidden rounded-t-lg mb-4">
+                <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>
@@ -103,9 +152,9 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
                 <div className="text-sm text-gray-500">
                   {member.course} • Year {member.year}
                 </div>
-                <div className="text-gray-600 text-sm mt-2">
-                  {member.bio}
-                </div>
+                {member.bio && (
+                  <div className="mt-2 text-sm text-gray-600">{member.bio}</div>
+                )}
               </div>
             </div>
           ))}

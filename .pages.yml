@@ -8,6 +8,48 @@ media:
 
 # Content collections
 content:
+  # Cars
+  - name: cars
+    label: Cars
+    path: content/cars
+    type: collection
+    filename: "{{slug}}"
+    fields:
+      - name: title
+        label: Car Name
+        type: string
+        required: true
+      - name: season
+        label: Season
+        type: string
+        required: true
+        description: For example, 2025-2026
+      - name: featuredImage
+        label: Featured Image
+        type: image
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: text
+        required: true
+        description: Brief summary (max 200 characters)
+      - name: weight
+        label: Weight
+        type: number
+        required: true
+        description: In kg
+      - name: peakPower
+        label: Peak Power
+        type: number
+        required: true
+        description: In kW
+      - name: body
+        label: Body
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+  
   # News Articles
   - name: news
     label: News Articles

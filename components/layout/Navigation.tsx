@@ -28,11 +28,14 @@ const navigationItems: NavigationItem[] = [
       { title: 'Operations', href: '/team/operations' },
     ],
   },
-  // Temporarily disabled
-  // {
-  //   title: 'News',
-  //   href: '/news',
-  // },
+  {
+    title: 'Cars',
+    href: '/cars',
+  },
+  {
+    title: 'News',
+    href: '/news',
+  },
   {
     title: 'Sponsors',
     href: '/sponsors',

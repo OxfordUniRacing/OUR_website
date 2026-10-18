@@ -19,7 +19,7 @@ export default function NewsPage() {
   return (
     <div className="py-16 sm:py-24">
       <div className="container-custom">
-        <div className="text-center mb-16">
+        <div className="mb-16 flex justify-center text-center">
           <SectionTitle
             title="Latest News"
             subtitle="Stay up to date with our latest competitions, achievements, and team updates."

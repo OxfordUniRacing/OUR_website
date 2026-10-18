@@ -13,6 +13,20 @@ export interface TeamMember {
   slug: string
 }
 
+export interface Car {
+  title: string
+  season: string
+  carNumber?: number
+  featuredImage: string
+  excerpt: string
+  weight?: number
+  peakPower?: number
+  tags: string[]
+  content: string
+  slug: string
+  featured?: boolean
+}
+
 export interface NewsArticle {
   title: string
   date: string

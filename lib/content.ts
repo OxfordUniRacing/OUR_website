@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
-import { TeamMember, NewsArticle, Sponsor, SubTeam, Page } from './types'
+import { TeamMember, NewsArticle, Car, Sponsor, SubTeam, Page } from './types'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
@@ -68,6 +68,62 @@ export function getTeamMember(subteam: string, slug: string): TeamMember | null 
       course: data.course,
       college: data.college,
       joinedYear: data.joinedYear,
+      slug,
+    }
+  } catch (error) {
+    return null
+  }
+}
+
+export function getCars(): Car[] {
+  const carsDir = path.join(contentDirectory, 'cars')
+  if (!fs.existsSync(carsDir)) return []
+
+  const filenames = fs.readdirSync(carsDir)
+  const cars: Car[] = []
+
+  filenames.forEach(filename => {
+    if (filename.endsWith('.md')) {
+      const filePath = path.join(carsDir, filename)
+      const fileContents = fs.readFileSync(filePath, 'utf8')
+      const { data, content } = matter(fileContents)
+
+      const car: Car = {
+        title: data.title,
+        season: data.season,
+        carNumber: data.carNumber,
+        featuredImage: data.featuredImage,
+        excerpt: data.excerpt,
+        weight: data.weight,
+        peakPower: data.peakPower,
+        tags: data.tags || [],
+        content,
+        slug: filename.replace(/\.md$/, ''),
+      }
+
+      cars.push(car)
+    }
+  })
+
+  return cars.sort((a, b) => b.season.localeCompare(a.season))
+}
+
+export function getCar(slug: string): Car | null {
+  try {
+    const filePath = path.join(contentDirectory, 'cars', `${slug}.md`)
+    const fileContents = fs.readFileSync(filePath, 'utf8')
+    const { data, content } = matter(fileContents)
+
+    return {
+      title: data.title,
+      season: data.season,
+      carNumber: data.carNumber,
+      featuredImage: data.featuredImage,
+      excerpt: data.excerpt,
+      weight: data.weight,
+      peakPower: data.peakPower,
+      tags: data.tags || [],
+      content,
       slug,
     }
   } catch (error) {

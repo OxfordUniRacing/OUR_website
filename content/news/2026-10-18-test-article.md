@@ -6,10 +6,12 @@ featuredImage: /images/og-image.jpg
 excerpt: Test
 featured: false
 ---
-# Heading 1  
+# Heading 1
 
 Some test
 
 # Subheading 1
 
-Some more text
+Some more text  
+  
+![](/images/og-image.jpg)

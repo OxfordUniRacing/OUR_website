@@ -13,7 +13,7 @@ content:
     label: Cars
     path: content/cars
     type: collection
-    filename: "{{slug}}"
+    filename: "{slug}.md"
     fields:
       - name: title
         label: Car Name
@@ -95,7 +95,7 @@ content:
     label: News Articles
     path: content/news
     type: collection
-    filename: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filename: "{year}-{month}-{day}-{slug}.md"
     fields:
       - name: title
         label: Title

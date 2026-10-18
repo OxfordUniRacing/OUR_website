@@ -13,7 +13,9 @@ content:
     label: Cars
     path: content/cars
     type: collection
-    filename: "{slug}"
+    filename:
+      template: "{primary}.md"
+      field: create
     fields:
       - name: title
         label: Car Name

@@ -38,7 +38,8 @@ content:
         description: Brief summary (max 200 characters)
       - name: tags
         label: Tags
-        type: list
+        type: string
+        list: true
         required: false
       - name: featured
         label: Featured
@@ -48,6 +49,8 @@ content:
         label: Body
         type: rich-text
         required: true
+        options:
+          format: markdown
 
   # Team Members
   - name: team

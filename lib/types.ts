@@ -19,8 +19,16 @@ export interface Car {
   carNumber?: number
   featuredImage: string
   excerpt: string
-  weight?: number
-  peakPower?: number
+  weight: number
+  // peakPower: number
+  overallPlace: string
+  designPlace: string
+  costPlace: string
+  buisinessPlace: string
+  accelerationPlace?: string
+  skidpadPlace?: string
+  sprintPlace?: string
+  endurancePlace?: string
   tags: string[]
   content: string
   slug: string

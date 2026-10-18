@@ -77,7 +77,7 @@ export default function CarsPage() {
                 </CardHeader>
 
                 <CardContent>
-                  {(car.weight != null || car.peakPower != null) && (
+                  {(car.weight != null) && (
                     <div className="mb-4 grid grid-cols-2 gap-3 text-sm">
                       {car.weight != null && (
                         <div>
@@ -88,14 +88,14 @@ export default function CarsPage() {
                         </div>
                       )}
 
-                      {car.peakPower != null && (
+                      {/* {car.peakPower != null && (
                         <div>
                           <p className="text-gray-500">Peak power</p>
                           <p className="font-medium text-oxford-blue">
                             {car.peakPower} kW
                           </p>
                         </div>
-                      )}
+                      )} */}
                     </div>
                   )}
 

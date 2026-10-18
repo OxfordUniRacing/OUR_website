@@ -38,11 +38,51 @@ content:
         type: number
         required: true
         description: In kg
-      - name: peakPower
-        label: Peak Power
-        type: number
+      # - name: peakPower
+      #   label: Peak Power
+      #   type: number
+      #   required: true
+      #   description: In kW
+      - name: overallPlace
+        label: Overall Place
+        type: string
         required: true
-        description: In kW
+        description: Overall place in the competition (e.g., 1st for first place)
+      - name: designPlace
+        label: Design Place
+        type: string
+        required: true
+        description: Design place in the competition (e.g., 1st for first place)
+      - name: costPlace
+        label: Cost Place
+        type: string
+        required: true
+        description: Cost place in the competition (e.g., 1st for first place)
+      - name: buisinessPlace
+        label: Business Place
+        type: string
+        required: true
+        description: Business place in the competition (e.g., 1st for first place)
+      - name: accelerationPlace
+        label: Acceleration Place
+        type: string
+        required: false
+        description: Acceleration place in the competition (e.g., 1st for first place)
+      - name: skidpadPlace
+        label: Skidpad Place
+        type: string
+        required: false
+        description: Skidpad place in the competition (e.g., 1st for first place)
+      - name: sprintPlace
+        label: Sprint Place
+        type: string
+        required: false
+        description: Sprint place in the competition (e.g., 1st for first place)
+      - name: endurancePlace
+        label: Endurance Place
+        type: string
+        required: false
+        description: Endurance place in the competition (e.g., 1st for first place)
       - name: body
         label: Body
         type: rich-text

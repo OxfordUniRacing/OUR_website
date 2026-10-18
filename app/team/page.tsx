@@ -9,10 +9,32 @@ export const metadata: Metadata = {
   description: 'Meet the talented individuals behind Oxford University Racing.',
 }
 
+const roleOrder = [
+	'Team Principal',
+	'Co-Team Principal',
+	'Vice Team Principal',
+	'Trackside & Operations',
+	'Technical Manager',
+	'Aerodynamics & Vehicle Performance Lead',
+	'Chief Engineer'
+]
+
 // Helper component to display team member cards
 function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembers?: number }) {
-  // Sort members alphabetically by role
-  const sortedMembers = [...members].sort((a, b) => a.role.localeCompare(b.role))
+  // Sort members by roleOrder or alphabetically by role for unlisted roles, then alphabetically by name
+  const sortedMembers = [...members].sort((a, b) => {
+    const aIndex = roleOrder.indexOf(a.role)
+    const bIndex = roleOrder.indexOf(b.role)
+
+    if (aIndex === -1 && bIndex === -1) {
+      return a.role.localeCompare(b.role)
+    }
+
+    const aOrder = aIndex === -1 ? Infinity : aIndex
+    const bOrder = bIndex === -1 ? Infinity : bIndex
+
+    return aOrder - bOrder || a.name.localeCompare(b.name)
+  })
   const displayMembers = sortedMembers.slice(0, maxMembers)
 
 

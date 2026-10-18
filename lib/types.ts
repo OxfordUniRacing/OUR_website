@@ -1,7 +1,7 @@
 export interface TeamMember {
   name: string
   role: string
-  subteam: 'leadership' | 'aerodynamics' | 'chassis' | 'powertrain' | 'electronics' | 'operations'
+  subteam: 'leadership' | 'bodywork and aerodynamics' | 'cooling' | 'chassis' | 'powertrain' | 'battery' | 'simulations' | 'electronics' | 'wheel assembly' | 'operations'
   image?: string
   email?: string
   linkedin?: string

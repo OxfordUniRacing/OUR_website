@@ -210,6 +210,9 @@ content:
     label: Partners
     path: content/sponsors
     type: collection
+    filename:
+      template: "{primary}.md"
+      field: create
     fields:
       - name: name
         label: Name

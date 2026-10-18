@@ -1,6 +1,6 @@
 ---
 name: Onshape
-logo: /images/onshape-logo-cmyk_color.svg
+logo: /images/sponsors/onshape-logo-cmyk_color.svg
 website: https://www.onshape.com/
 since: 2025
 order: 3

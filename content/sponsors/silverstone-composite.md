@@ -1,6 +1,6 @@
 ---
 name: Silverstone Composites
-logo: /images/silverstone-composites.png
+logo: /images/sponsors/silverstone-composites.png
 since: 2021
 order: 15
 ---

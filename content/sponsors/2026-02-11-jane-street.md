@@ -1,6 +1,6 @@
 ---
 name: Jane Street
-logo: /images/LOGO_stacked_w_registration_black.png
+logo: /images/sponsors/LOGO_stacked_w_registration_black.png
 website: 'https://www.janestreet.com'
 since: 2025
 order: 12

@@ -1,6 +1,6 @@
 ---
 name: Proformance Metals
-logo: /images/proformance-black.svg
+logo: /images/sponsors/proformance-black.svg
 website: 'https://proformancemetals.co.uk'
 since: 2022
 order: 13

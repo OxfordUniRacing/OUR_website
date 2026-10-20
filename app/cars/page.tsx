@@ -42,7 +42,7 @@ export default function CarsPage() {
                 className="group overflow-hidden transition-shadow hover:shadow-lg"
               >
                 {car.featuredImage && (
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative aspect-video overflow-hidden">
                     <Image
                       src={car.featuredImage}
                       alt={car.title}
@@ -59,12 +59,15 @@ export default function CarsPage() {
                   </p>
 
                   <CardTitle className="text-xl">
-                    <Link
+                    {/* <Link
                       href={`/cars/${car.slug}`}
                       className="transition-colors hover:text-accent-red"
                     >
                       {car.title}
-                    </Link>
+                    </Link> */}
+                    <span className="transition-colors hover:text-accent-red">
+                      {car.title}
+                    </span>
                   </CardTitle>
 
                   <CardDescription>{car.excerpt}</CardDescription>
@@ -72,7 +75,7 @@ export default function CarsPage() {
 
                 <CardContent className="space-y-6">
                   {/* Technical Specifications */}
-                  <div>
+                  {/* <div>
                     <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">
                       Specifications
                     </h3>
@@ -85,14 +88,14 @@ export default function CarsPage() {
                         </p>
                       </div>
 
-                      {/* <div className="rounded-md bg-gray-50 p-3">
+                      <div className="rounded-md bg-gray-50 p-3">
                         <p className="text-sm text-gray-500">Peak power</p>
                         <p className="font-semibold text-oxford-blue">
                           {car.peakPower} kW
                         </p>
-                      </div> */}
+                      </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Competition Results */}
                   <div>
@@ -151,12 +154,12 @@ export default function CarsPage() {
                     </div>
                   </div>
 
-                  <Link
+                  {/* <Link
                     href={`/cars/${car.slug}`}
                     className="inline-block text-sm font-medium text-oxford-blue transition-colors hover:text-accent-red"
                   >
                     Explore car details →
-                  </Link>
+                  </Link> */}
                 </CardContent>
               </Card>
             ))}

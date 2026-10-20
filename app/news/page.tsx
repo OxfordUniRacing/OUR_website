@@ -35,7 +35,7 @@ export default function NewsPage() {
               {featuredArticles.map((article) => (
                 <Card key={article.slug} className="group overflow-hidden hover:shadow-lg transition-shadow">
                   {article.featuredImage && (
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative aspect-video overflow-hidden">
                       <Image
                         src={article.featuredImage}
                         alt={article.title}
@@ -97,7 +97,7 @@ export default function NewsPage() {
               {regularArticles.map((article) => (
                 <Card key={article.slug} className="group overflow-hidden hover:shadow-lg transition-shadow">
                   {article.featuredImage && (
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative aspect-video overflow-hidden">
                       <Image
                         src={article.featuredImage}
                         alt={article.title}

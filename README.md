@@ -162,8 +162,9 @@ Pages CMS configuration is stored in `.pages.yml`. Content is managed through:
 
 **Brand Colors:**
 - Oxford Blue: `#002147` (primary)
-- Racing Red: `#FF0000` (accent)
+- Gold Yellow: `#FFAB13` (accent)
 - Silver: `#C0C0C0` (secondary)
+- White: `#FFFFFF`
 
 **Typography:**
 - Sans-serif: Inter

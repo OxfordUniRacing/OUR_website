@@ -100,11 +100,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
                 <Link href="/inclusion" className="text-gray-300 hover:text-white transition-colors">
                   Inclusion
                 </Link>
@@ -112,6 +107,11 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                  About
                 </Link>
               </li>
             </ul>

@@ -89,7 +89,7 @@ export default function ContactPage() {
               <p className="text-lg mb-6">Interested in sponsoring or collaborating with Oxford University Racing?</p>
               <a
                 href="/sponsors"
-                className="inline-block bg-accent-red text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors"
+                className="inline-block bg-[#FFAB13] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#FFAB13]/90 transition-colors"
               >
                 Become a Sponsor
               </a>

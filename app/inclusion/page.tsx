@@ -124,8 +124,7 @@ export default function InclusionPage() {
               Welfare &amp; Inclusion Officer
             </h2>
             <p className="mb-4">
-              <span className="font-semibold">Seb Coxon Vadillo</span>, in
-              addition to his role as Team Principal, serves as Oxford
+              <span className="font-semibold">Seb Coxon Vadillo</span>, serves as Oxford
               University Racing&apos;s Welfare &amp; Inclusion Officer.
               He is the team&apos;s confidential first point of contact
               for any member who wants to raise a concern about welfare,
@@ -143,7 +142,7 @@ export default function InclusionPage() {
               Confidential contact:{' '}
               <Link
                 href="https://forms.cloud.microsoft/e/qg8kb59bri"
-                className="underline hover:text-oxford-peach"
+                className="underline text-[#FFAB13] hover:text-[#FFAB13]/90"
               >
                 Concerns & Welfare Form
               </Link>
@@ -224,7 +223,7 @@ export default function InclusionPage() {
                   href="https://racingpride.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-oxford-blue underline hover:text-oxford-peach"
+                  className="text-oxford-blue underline hover:text-[#FFAB13]"
                 >
                   Racing Pride
                 </a>

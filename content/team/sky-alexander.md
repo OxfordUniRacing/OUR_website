@@ -1,8 +1,8 @@
 ---
-name: Alexander Mather
-role: Chief Engineer
+name: Sky Alexander
+role: Welfare Officer
 subteam: wheel assembly
 image: /images/
-year: 3
+year: 2
 course: Engineering Science
 ---

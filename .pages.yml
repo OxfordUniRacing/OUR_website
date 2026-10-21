@@ -38,7 +38,7 @@ content:
       - name: weight
         label: Weight
         type: number
-        required: true
+        required: false
         description: In kg
       # - name: peakPower
       #   label: Peak Power
@@ -85,12 +85,12 @@ content:
         type: string
         required: false
         description: Endurance place in the competition (e.g., 1st for first place)
-      - name: body
-        label: Body
-        type: rich-text
-        required: true
-        options:
-          format: markdown
+      # - name: body
+      #   label: Body
+      #   type: rich-text
+      #   required: true
+      #   options:
+      #     format: markdown
   
   # News Articles
   - name: news

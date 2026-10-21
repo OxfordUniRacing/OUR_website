@@ -141,10 +141,10 @@ export default function InclusionPage() {
             <p>
               Confidential contact:{' '}
               <Link
-                href="https://forms.cloud.microsoft/e/qg8kb59bri"
+                href="https://forms.cloud.microsoft/e/PMw1TwrhrL"
                 className="underline text-[#FFAB13] hover:text-[#FFAB13]/90"
               >
-                Concerns & Welfare Form (TO BE UPDATED)
+                Concerns & Welfare Form
               </Link>
             </p>
           </section>

@@ -116,7 +116,7 @@ content:
       - name: featuredImage
         label: Featured Image
         type: image
-        required: false
+        required: true
       - name: excerpt
         label: Excerpt
         type: text
@@ -138,7 +138,7 @@ content:
         options:
           format: markdown
 
-  # Team Members
+  # Team Members - note: email, linkedin and bio are currently unused fields
   - name: team
     label: Team Members
     path: content/team
@@ -156,7 +156,7 @@ content:
         label: Role
         type: string
         required: true
-        description: Position or title (e.g., Team Principal, Lead Engineer)
+        description: Position or title (e.g., Team Principal, Chief Engineer)
       - name: subteam
         label: Sub-team
         type: select

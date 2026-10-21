@@ -3,6 +3,6 @@ name: Sree Jadu
 role: Chief Engineer
 subteam: simulations
 image: /images/
-year: 
-course: 
+year: 2
+course: Software Engineering Masters
 ---

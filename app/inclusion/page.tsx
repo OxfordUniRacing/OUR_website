@@ -124,14 +124,14 @@ export default function InclusionPage() {
               Welfare &amp; Inclusion Officer
             </h2>
             <p className="mb-4">
-              <span className="font-semibold">Seb Coxon Vadillo</span>, serves as Oxford
+              <span className="font-semibold">Sky Alexander</span>, serves as Oxford
               University Racing&apos;s Welfare &amp; Inclusion Officer.
-              He is the team&apos;s confidential first point of contact
+              She is the team&apos;s confidential first point of contact
               for any member who wants to raise a concern about welfare,
               inclusion, or conduct.
             </p>
             <p className="mb-4">
-              Concerns can be raised informally with Seb, formally in
+              Concerns can be raised informally with Sky, formally in
               writing, or externally to the Department of
               Engineering Science Welfare Lead or the University
               Harassment Service. Reports are kept confidential
@@ -144,7 +144,7 @@ export default function InclusionPage() {
                 href="https://forms.cloud.microsoft/e/qg8kb59bri"
                 className="underline text-[#FFAB13] hover:text-[#FFAB13]/90"
               >
-                Concerns & Welfare Form
+                Concerns & Welfare Form (TO BE UPDATED)
               </Link>
             </p>
           </section>

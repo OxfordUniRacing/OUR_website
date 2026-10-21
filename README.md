@@ -121,8 +121,8 @@ The site is deployed on Cloudflare Pages:
 - `npm run reorder-sponsors` - Manually reorder sponsor positions
 
 > When I tried to start the production server with `npm run start` I got an error
-> Error: "next start" does not work with "output: export" configuration. Use "npx serve@latest out" instead.
-> So consider using `npx serve@lastest out` instead for starting production server
+> `"next start" does not work with "output: export" configuration. Use "npx serve@latest out" instead.`
+> So consider using `npx serve@lastest out` instead for starting production server.
 
 ## Technical Architecture
 

@@ -1,7 +1,7 @@
 ---
 name: Ansys
-logo: /images/sponsors/ansys.jpg
+logo: /images/sponsors/Ansys_logo.svg
 website: 'https://ansys.synopsys.com/en-gb'
 order: 3
 ---
-Ansys provides engineering simulation software allowing engineers to predict how products will work in real life. We have been using Ansys for
+Ansys have provided our team with licenses for 2 years, unlocking higher performance simulations. These allow us to validate load cases to greater detail, and unlock accurate large deformation simulations for development of our custom impact attenuator.

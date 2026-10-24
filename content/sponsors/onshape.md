@@ -1,7 +1,7 @@
 ---
 name: Onshape
 logo: /images/sponsors/onshape-logo-cmyk_color.svg
-website: https://www.onshape.com/
+website: 'https://www.onshape.com/'
 since: 2025
 order: 3
 ---

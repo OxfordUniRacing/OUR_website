@@ -33,7 +33,7 @@ content:
       - name: excerpt
         label: Excerpt
         type: text
-        required: true
+        required: false
         description: Brief summary (max 200 characters)
       - name: weight
         label: Weight
@@ -65,6 +65,11 @@ content:
         type: string
         required: true
         description: Business place in the competition (e.g., 1st for first place)
+      - name: lapTimeSimPlace
+        label: Lap Time Simulation Place
+        type: string
+        required: false
+        description: Lap time simulation place in the competition (e.g., 1st for first place)
       - name: accelerationPlace
         label: Acceleration Place
         type: string

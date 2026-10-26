@@ -70,7 +70,9 @@ export default function CarsPage() {
                     </span>
                   </CardTitle>
 
-                  <CardDescription>{car.excerpt}</CardDescription>
+                  {car.excerpt && (
+                    <CardDescription>{car.excerpt}</CardDescription>
+                  )}
                 </CardHeader>
 
                 <CardContent className="space-y-6">
@@ -131,6 +133,15 @@ export default function CarsPage() {
                           {car.businessPlace}
                         </span>
                       </div>
+
+                      {car.lapTimeSimPlace && (
+                        <div className="flex items-center justify-between gap-3">
+                          <span className="text-gray-600">Lap Time Simulation</span>
+                          <span className="font-semibold text-oxford-blue">
+                            {car.lapTimeSimPlace}
+                          </span>
+                        </div>
+                      )}
 
                       {[
                         ['Acceleration', car.accelerationPlace],

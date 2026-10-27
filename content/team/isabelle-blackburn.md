@@ -3,6 +3,6 @@ name: Isabelle Blackburn
 role: Chief Engineer
 subteam: battery
 image: /images/
-year: 
+year: 4
 course: Engineering Science
 ---

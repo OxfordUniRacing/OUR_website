@@ -1,8 +1,8 @@
 ---
-name: Shivam (Om) Panda
+name: Shivam Panda
 role: Chief Engineer
 subteam: wheel assembly
 image: /images/
-year: 
-course: Engineering Science
+year: 2
+course: Physics
 ---

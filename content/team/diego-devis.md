@@ -1,8 +1,8 @@
 ---
-name: Raveen Akuretiygama
+name: Diego Devis
 role: Chief Engineer
-subteam: powertrain
+subteam: battery
 image: /images/
-year: 2
+year: 3
 course: Engineering Science
 ---

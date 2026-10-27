@@ -1,8 +1,8 @@
 ---
-name: Diego Devis Munoz
+name: Raveen Akuretiyagama
 role: Chief Engineer
-subteam: battery
+subteam: powertrain
 image: /images/
-year: 3
+year: 2
 course: Engineering Science
 ---

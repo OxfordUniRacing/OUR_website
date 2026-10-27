@@ -1,5 +1,5 @@
 ---
-name: Sree Jadu
+name: Sree Jaddu
 role: Chief Engineer
 subteam: simulations
 image: /images/

@@ -2,7 +2,7 @@
 name: Nicolas Carcelle
 role: Aerodynamics and Vehicle Performance Lead
 subteam: leadership
-image: /images/
+image: /images/team/nicolas-carcelle.jpg
 year: 3
 course: Engineering Science
 ---

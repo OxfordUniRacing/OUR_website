@@ -1,5 +1,5 @@
 ---
-name: Anya West
+name: Anyankha West
 role: Sponsorship Chief
 subteam: operations
 image: /images/

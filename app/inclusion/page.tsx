@@ -193,7 +193,7 @@ export default function InclusionPage() {
               </li>
               <li>
                 <span className="font-semibold">Welfare structure.</span>{' '}
-                A named Welfare &amp; Inclusion Officer on the leadership
+                A named Welfare &amp; Inclusion Officer on the
                 team, with three independent reporting routes (internal,
                 departmental, university).
               </li>

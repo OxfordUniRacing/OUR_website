@@ -122,7 +122,7 @@ The site is deployed on Cloudflare Pages:
 
 > When I tried to start the production server with `npm run start` I got an error
 > `"next start" does not work with "output: export" configuration. Use "npx serve@latest out" instead.`
-> So consider using `npx serve@lastest out` instead for starting production server.
+> So consider using `npx serve@latest out` instead for starting production server.
 
 ## Technical Architecture
 

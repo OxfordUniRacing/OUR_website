@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="py-16 sm:py-24">
-        <div className="container-custom">
-        <div className="text-center mb-16">
+      <div className="container-custom">
+        <div className="mb-16 flex justify-center text-center">
           <SectionTitle
             title="Get in Touch"
-            subtitle="We are always happy to hear from you"
+            subtitle="We are always happy to hear from you."
             centered
           />
         </div>

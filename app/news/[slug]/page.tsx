@@ -7,11 +7,19 @@ import { getNewsArticle, getNewsArticles, markdownToHtml } from '@/lib/content'
 import { formatDate } from '@/lib/utils'
 
 type Props = {
-  params: Promise<{ slug: string }>
+  params: { slug: string }
 }
 
+export const dynamicParams = false
+
 export function generateStaticParams() {
-  return getNewsArticles().map((article) => ({
+  const articles = getNewsArticles()
+
+  if (articles.length === 0) {
+    return [{ slug: '__placeholder__' }]
+  }
+
+  return articles.map((article) => ({
     slug: article.slug,
   }))
 }
@@ -19,7 +27,7 @@ export function generateStaticParams() {
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
-  const { slug } = await params
+  const { slug } = params
   const article = getNewsArticle(slug)
 
   if (!article) {
@@ -45,7 +53,7 @@ export async function generateMetadata(
 }
 
 export default async function NewsArticlePage({ params }: Props) {
-  const { slug } = await params
+  const { slug } = params
   const article = getNewsArticle(slug)
 
   if (!article) {

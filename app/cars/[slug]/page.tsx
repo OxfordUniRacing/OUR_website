@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation'
 import { getCar, getCars, markdownToHtml } from '@/lib/content'
 
 type Props = {
-  params: Promise<{ slug: string }>
+  params: { slug: string }
 }
 
 export function generateStaticParams() {

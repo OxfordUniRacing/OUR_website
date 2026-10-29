@@ -124,29 +124,28 @@ export default function InclusionPage() {
               Welfare &amp; Inclusion Officer
             </h2>
             <p className="mb-4">
-              <span className="font-semibold">Jon Soepadmo</span>, in
-              addition to his role as Technical Manager, serves as Oxford
+              <span className="font-semibold">Sky Alexander</span>, serves as Oxford
               University Racing&apos;s Welfare &amp; Inclusion Officer.
-              He is the team&apos;s confidential first point of contact
+              She is the team&apos;s confidential first point of contact
               for any member who wants to raise a concern about welfare,
               inclusion, or conduct.
             </p>
             <p className="mb-4">
-              Concerns can be raised informally with Jon, formally in
-              writing to the Team Principal, or externally to the
-              Department of Engineering Science Welfare Lead or the
-              University Harassment Service. Reports are kept confidential
+              Concerns can be raised informally with Sky, formally in
+              writing, or externally to the Department of
+              Engineering Science Welfare Lead or the University
+              Harassment Service. Reports are kept confidential
               and retaliation against anyone raising a concern in good
               faith is itself a breach of the Code.
             </p>
             <p>
               Confidential contact:{' '}
-              <a
-                href="mailto:welfare@oxforduniracing.com"
-                className="underline hover:text-oxford-peach"
+              <Link
+                href="https://forms.cloud.microsoft/e/PMw1TwrhrL"
+                className="underline text-[#FFAB13] hover:text-[#FFAB13]/90"
               >
-                welfare@oxforduniracing.com
-              </a>
+                Concerns & Welfare Form
+              </Link>
             </p>
           </section>
 
@@ -194,7 +193,7 @@ export default function InclusionPage() {
               </li>
               <li>
                 <span className="font-semibold">Welfare structure.</span>{' '}
-                A named Welfare &amp; Inclusion Officer on the leadership
+                A named Welfare &amp; Inclusion Officer on the
                 team, with three independent reporting routes (internal,
                 departmental, university).
               </li>
@@ -224,7 +223,7 @@ export default function InclusionPage() {
                   href="https://racingpride.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-oxford-blue underline hover:text-oxford-peach"
+                  className="text-oxford-blue underline hover:text-[#FFAB13]"
                 >
                   Racing Pride
                 </a>

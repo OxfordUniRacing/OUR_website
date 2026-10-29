@@ -9,10 +9,11 @@ The official website for Oxford University Racing, Oxford's Formula Student team
 Most content updates can be done through the Pages CMS without any technical knowledge:
 
 1. **Access the CMS**
+   - Create a feature branch of the `main` branch on the `OxfordUniRacing/OUR_website` repository
    - Visit [https://app.pagescms.org](https://app.pagescms.org)
    - Sign in with your GitHub account
    - Select the `OxfordUniRacing/OUR_website` repository
-   - **Important**: Select the `main` branch to edit
+   - **Important**: Select the your feature branch to edit 
 
 2. **What You Can Edit**
    - **News Articles**: Add race reports, updates, and announcements
@@ -23,8 +24,9 @@ Most content updates can be done through the Pages CMS without any technical kno
 3. **Making Changes**
    - Click on the content type you want to edit
    - Create new entries or edit existing ones
-   - Changes are saved directly to the `main` branch on GitHub
-   - To publish changes to the live website, contact **Joshua Ampomah** to push to production
+   - Changes are saved directly to your feature branch on GitHub
+   - To commit these changes back to the `main` branch on the `OxfordUniRacing/OUR_Website` repository, go to your feature branch on GitHub and submit a pull request to `main` branch and someone test and approve your changes.
+   - To publish changes to the live website, contact **Gareth Everton** to push to production
 
 ### Content Organization
 
@@ -51,9 +53,9 @@ Images should be placed in `public/images/` and organized by type:
 
 ### Publishing to Production
 
-Changes made through the CMS are saved to the `main` branch. To publish these changes to the live website:
+Changes made through the CMS should be saved to a feature branch and merged back via pull request (see `Using the CMS` > `3. Making Changes`)
 
-**Contact Joshua Ampomah** to push changes from `main` to the `production` branch.
+**Contact Gareth Everton** to push changes from `main` to the `production` branch.
 
 ## Deployment
 
@@ -61,12 +63,12 @@ The site is deployed on Cloudflare Pages:
 
 **Production Branch**: `production`
 - This is the live website
-- Only Joshua Ampomah should push to this branch
+- Only Gareth Everton should push to this branch
 - Changes must be tested on `main` before production deployment
 
 **Main Branch**: `main`
 - Default branch for all content updates
-- Use this branch when editing through the CMS
+- Use this branch to branch from when editing through the CMS
 - Changes here do not immediately affect the live site
 
 ## Development Setup
@@ -78,29 +80,36 @@ The site is deployed on Cloudflare Pages:
 - Git
 
 ### Local Development
+1. Create a branch:
+   Go to the `OxfordUniRacing/OUR_Website` repository and select create a branch (see [GitHub Documentation](https://docs.github.com/en/pull-requests/how-tos/commit-changes/managing-branches-within-your-repository#creating-a-branch-via-the-branches-overview))
 
-1. Clone the repository:
+2. Clone the repository:
    ```bash
    git clone https://github.com/OxfordUniRacing/OUR_website.git
    cd OUR_website
    ```
 
-2. Install dependencies:
+3. Swap to your branch
+   ```bash
+   git checkout branch_name
+   ```
+
+4. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Create `.env.local` file with environment variables:
+5. Create `.env.local` file with environment variables:
    ```bash
    NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=e99a186a-9e95-4aef-b4d9-f5c3562c882d
    ```
 
-4. Start development server:
+6. Start development server:
    ```bash
    npm run dev
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000)
+7. Open [http://localhost:3000](http://localhost:3000)
 
 ### Available Commands
 
@@ -110,6 +119,10 @@ The site is deployed on Cloudflare Pages:
 - `npm run lint` - Run ESLint
 - `npm run type-check` - Run TypeScript type checking
 - `npm run reorder-sponsors` - Manually reorder sponsor positions
+
+> When I tried to start the production server with `npm run start` I got an error
+> `"next start" does not work with "output: export" configuration. Use "npx serve@latest out" instead.`
+> So consider using `npx serve@latest out` instead for starting production server.
 
 ## Technical Architecture
 
@@ -153,8 +166,9 @@ Pages CMS configuration is stored in `.pages.yml`. Content is managed through:
 
 **Brand Colors:**
 - Oxford Blue: `#002147` (primary)
-- Racing Red: `#FF0000` (accent)
+- Gold Yellow: `#FFAB13` (accent)
 - Silver: `#C0C0C0` (secondary)
+- White: `#FFFFFF`
 
 **Typography:**
 - Sans-serif: Inter
@@ -180,13 +194,12 @@ This is configured in Cloudflare Pages under Settings → Environment variables 
 
 ## Contributing
 
-1. Create a feature branch from `main`
+1. Create a branch from `main`
 2. Make your changes
 3. Test locally with `npm run build` and `npm run type-check`
-4. Push to your feature branch (creates preview deployment)
-5. Create a pull request to `main`
-6. After approval, merge to `main`
-7. Merge `main` to `production` for production deployment
+4. Create a pull request to `main`
+5. After approval, merge to `main`
+6. Merge `main` to `production` for production deployment
 
 ### Code Guidelines
 

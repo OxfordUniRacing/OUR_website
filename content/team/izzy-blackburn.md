@@ -1,8 +1,8 @@
 ---
-name: Isabelle Blackburn
+name: Izzy Blackburn
 role: Chief Engineer
 subteam: battery
-image: /images/team/isabelle-blackburn.webp
+image: /images/team/izzy-blackburn.webp
 year: 4
 course: Engineering Science
 ---

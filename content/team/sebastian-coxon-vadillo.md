@@ -2,7 +2,7 @@
 name: Sebastian Coxon Vadillo
 role: Team Principal
 subteam: leadership
-image: /images/team/sebastian-coxon-vadillo.jpg
+image: /images/team/sebastian-coxon-vadillo.webp
 year: 4
 course: Engineering Science
 ---

@@ -11,7 +11,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://oxforduniracing.com'),
+  metadataBase: new URL('https://www.oxforduniracing.com'),
   title: {
     default: 'Oxford University Racing - Formula Student Team',
     template: '%s | Oxford University Racing',
@@ -20,10 +20,14 @@ export const metadata: Metadata = {
   keywords: ['Oxford University', 'Formula Student', 'Racing', 'Engineering', 'Motorsport'],
   authors: [{ name: 'Oxford University Racing' }],
   creator: 'Oxford University Racing',
+  icons: {
+    icon: '/images/general_assets/icon.ico',
+    apple: '/images/general_assets/apple-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://oxforduniracing.com',
+    url: 'https://www.oxforduniracing.com',
     title: 'Oxford University Racing - Formula Student Team',
     description: 'Oxford University Racing is Oxford&apos;s Formula Student team, designing and building single-seater racing cars to compete in international competitions.',
     siteName: 'Oxford University Racing',

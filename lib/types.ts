@@ -1,7 +1,7 @@
 export interface TeamMember {
   name: string
   role: string
-  subteam: 'leadership' | 'aerodynamics' | 'chassis' | 'powertrain' | 'electronics' | 'operations'
+  subteam: 'leadership' | 'bodywork and aerodynamics' | 'cooling' | 'chassis' | 'powertrain' | 'battery' | 'simulations' | 'electronics' | 'wheel assembly' | 'operations'
   image?: string
   email?: string
   linkedin?: string
@@ -11,6 +11,29 @@ export interface TeamMember {
   college: string
   joinedYear: number
   slug: string
+}
+
+export interface Car {
+  title: string
+  season: string
+  carNumber?: number
+  featuredImage: string
+  excerpt: string
+  weight: number
+  // peakPower: number
+  overallPlace: string
+  designPlace: string
+  costPlace: string
+  businessPlace: string
+  lapTimeSimPlace?: string
+  accelerationPlace?: string
+  skidpadPlace?: string
+  sprintPlace?: string
+  endurancePlace?: string
+  tags: string[]
+  content: string
+  slug: string
+  featured?: boolean
 }
 
 export interface NewsArticle {

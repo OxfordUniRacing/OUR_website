@@ -17,18 +17,25 @@ const navigationItems: NavigationItem[] = [
     children: [
       { title: 'Overview', href: '/team' },
       { title: 'Leadership', href: '/team/leadership' },
-      { title: 'Aerodynamics', href: '/team/aerodynamics' },
+      { title: 'Bodywork and Aerodynamics', href: '/team/bodywork-and-aerodynamics' },
+      { title: 'Cooling', href: '/team/cooling' },
+      { title: 'Battery', href: '/team/battery' },
       { title: 'Chassis', href: '/team/chassis' },
       { title: 'Powertrain', href: '/team/powertrain' },
+      { title: 'Simulations', href: '/team/simulations' },
       { title: 'Electronics', href: '/team/electronics' },
+      { title: 'Wheel Assembly', href: '/team/wheel-assembly' },
       { title: 'Operations', href: '/team/operations' },
     ],
   },
-  // Temporarily disabled
-  // {
-  //   title: 'News',
-  //   href: '/news',
-  // },
+  {
+    title: 'Cars',
+    href: '/cars',
+  },
+  {
+    title: 'News',
+    href: '/news',
+  },
   {
     title: 'Sponsors',
     href: '/sponsors',
@@ -91,9 +98,9 @@ export default function Navigation() {
             <Link
               href={item.href}
               className={cn(
-                'text-sm font-medium transition-colors hover:text-oxford-peach',
+                'text-sm font-medium transition-colors hover:text-[#FFAB13]/90',
                 isActive(item.href)
-                  ? 'text-oxford-peach'
+                  ? 'text-[#FFAB13]'
                   : 'text-white hover:text-gray-200'
               )}
             >
@@ -125,7 +132,7 @@ export default function Navigation() {
                     className={cn(
                       'block px-4 py-2 text-sm transition-colors hover:bg-gray-50',
                       isActive(child.href)
-                        ? 'text-oxford-peach'
+                        ? 'text-[#FFAB13]'
                         : 'text-gray-700 hover:text-gray-900'
                     )}
                   >
@@ -168,7 +175,7 @@ export default function Navigation() {
                   className={cn(
                     'block rounded-md px-3 py-2 text-base font-medium transition-colors',
                     isActive(item.href)
-                      ? 'bg-oxford-peach text-white'
+                      ? 'bg-[#FFAB13] text-white'
                       : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
                   )}
                   onClick={() => setMobileMenuOpen(false)}
@@ -184,7 +191,7 @@ export default function Navigation() {
                         className={cn(
                           'block rounded-md px-3 py-2 text-sm font-medium transition-colors',
                           isActive(child.href)
-                            ? 'bg-oxford-peach text-white'
+                            ? 'bg-[#FFAB13] text-white'
                             : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                         )}
                         onClick={() => setMobileMenuOpen(false)}

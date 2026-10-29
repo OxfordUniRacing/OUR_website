@@ -36,7 +36,18 @@ export default function Footer() {
               >
                 <span className="sr-only">Instagram</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.004 7.5c-2.485 0-4.5 2.015-4.5 4.5s2.015 4.5 4.5 4.5 4.5-2.015 4.5-4.5-2.015-4.5-4.5-4.5zm0 7.425c-1.613 0-2.925-1.312-2.925-2.925s1.312-2.925 2.925-2.925 2.925 1.312 2.925 2.925-1.312 2.925-2.925 2.925zM16.004 7.2c0 .58-.47 1.05-1.05 1.05s-1.05-.47-1.05-1.05.47-1.05 1.05-1.05 1.05.47 1.05 1.05zm3.979 1.065c-.089-.819-.219-1.548-.803-2.131-.584-.584-1.312-.714-2.131-.803-.84-.096-3.36-.096-4.2 0-.819.089-1.548.219-2.131.803-.584.584-.714 1.312-.803 2.131-.096.84-.096 3.36 0 4.2.089.819.219 1.548.803 2.131.584.584 1.312.714 2.131.803.84.096 3.36.096 4.2 0 .819-.089 1.548-.219 2.131-.803.584-.584.714-1.312.803-2.131.096-.84.096-3.36 0-4.2zm-1.575 5.1c-.129.324-.378.573-.702.702-.487.193-1.641.149-2.18.149s-1.693.044-2.18-.149c-.324-.129-.573-.378-.702-.702-.193-.487-.149-1.641-.149-2.18s-.044-1.693.149-2.18c.129-.324.378-.573.702-.702.487-.193 1.641-.149 2.18-.149s1.693-.044 2.18.149c.324.129.573.378.702.702.193.487.149 1.641.149 2.18s.044 1.693-.149 2.18z"/>
+                  <path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8zm4 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5-3a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg>
+              </a>
+              <a
+                href="https://facebook.com/oxforduniracing"
+                className="text-gray-300 hover:text-accent-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="sr-only">Facebook</span>
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
               <a
@@ -51,14 +62,14 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://twitter.com/oxforduniracing"
+                href="https://x.com/oxforduniracing"
                 className="text-gray-300 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="sr-only">Twitter</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                <span className="sr-only">X</span>
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 300 271">
+                  <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/>
                 </svg>
               </a>
             </div>
@@ -74,6 +85,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/cars" className="text-gray-300 hover:text-white transition-colors">
+                  Cars
+                </Link>
+              </li>
+              <li>
                 <Link href="/news" className="text-gray-300 hover:text-white transition-colors">
                   News
                 </Link>
@@ -84,11 +100,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
                 <Link href="/inclusion" className="text-gray-300 hover:text-white transition-colors">
                   Inclusion
                 </Link>
@@ -96,6 +107,11 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                  About
                 </Link>
               </li>
             </ul>
@@ -115,7 +131,7 @@ export default function Footer() {
                   href="mailto:our@eng.ox.ac.uk"
                   className="hover:text-white transition-colors"
                 >
-                  contact@oxforduniracing.com
+                  our@eng.ox.ac.uk
                 </a>
               </li>
             </ul>
@@ -128,12 +144,12 @@ export default function Footer() {
               © {new Date().getFullYear()} Oxford University Racing. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 sm:mt-0">
-              <Link href="/privacy" className="text-gray-300 hover:text-white text-sm transition-colors">
+              <Link href="https://eng.ox.ac.uk/privacy-policy" className="text-gray-300 hover:text-white text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-300 hover:text-white text-sm transition-colors">
+              {/* <Link href="/terms" className="text-gray-300 hover:text-white text-sm transition-colors">
                 Terms of Service
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

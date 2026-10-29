@@ -1,8 +1,8 @@
 ---
 name: Onshape
-logo: /images/onshape-logo-cmyk_color.svg
-website: onshape.com
+logo: /images/sponsors/onshape-logo-cmyk_color.svg
+website: 'https://www.onshape.com/'
 since: 2025
-order: 3
+order: 4
 ---
 Onshape allows the team to work collaboratively on Computer Aided Design (CAD). This supports teamwork in the design process.

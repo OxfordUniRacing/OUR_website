@@ -19,7 +19,7 @@ export default function NewsPage() {
   return (
     <div className="py-16 sm:py-24">
       <div className="container-custom">
-        <div className="text-center mb-16">
+        <div className="mb-16 flex justify-center text-center">
           <SectionTitle
             title="Latest News"
             subtitle="Stay up to date with our latest competitions, achievements, and team updates."
@@ -35,7 +35,7 @@ export default function NewsPage() {
               {featuredArticles.map((article) => (
                 <Card key={article.slug} className="group overflow-hidden hover:shadow-lg transition-shadow">
                   {article.featuredImage && (
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative aspect-video overflow-hidden">
                       <Image
                         src={article.featuredImage}
                         alt={article.title}
@@ -97,7 +97,7 @@ export default function NewsPage() {
               {regularArticles.map((article) => (
                 <Card key={article.slug} className="group overflow-hidden hover:shadow-lg transition-shadow">
                   {article.featuredImage && (
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative aspect-video overflow-hidden">
                       <Image
                         src={article.featuredImage}
                         alt={article.title}

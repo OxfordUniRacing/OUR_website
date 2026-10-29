@@ -21,14 +21,10 @@ const roleOrder = [
 
 // Helper component to display team member cards
 function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembers?: number }) {
-  // Sort members by roleOrder or alphabetically by role for unlisted roles, then alphabetically by name
+  // Sort members by roleOrder, then alphabetically by name
   const sortedMembers = [...members].sort((a, b) => {
     const aIndex = roleOrder.indexOf(a.role)
     const bIndex = roleOrder.indexOf(b.role)
-
-    if (aIndex === -1 && bIndex === -1) {
-      return a.role.localeCompare(b.role)
-    }
 
     const aOrder = aIndex === -1 ? Infinity : aIndex
     const bOrder = bIndex === -1 ? Infinity : bIndex

@@ -1,7 +1,9 @@
+import fs from 'fs'
+import path from 'path'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getTeamMembers, getTeamMembersBySubteam } from '@/lib/content'
+import { getTeamMembers, getTeamMembersBySubteam, getTeamMemberImage } from '@/lib/content'
 import SectionTitle from '@/components/common/SectionTitle'
 
 export const metadata: Metadata = {
@@ -67,17 +69,15 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
               key={member.slug}
               className="w-full rounded-lg border border-gray-300 bg-white p-4 shadow-sm sm:w-[calc(50%_-_0.5rem)] lg:w-[calc(33.333%_-_0.667rem)]"
             >
-              {member.image && (
-                <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-              )}
+              <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg">
+                <Image
+                  src={getTeamMemberImage(member.image)}
+                  alt={member.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">{member.name}</h3>
                 <p className="text-sm text-gray-600">{member.role}</p>
@@ -98,16 +98,14 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl w-full">
           {middleRows.map((member) => (
             <div key={member.slug} className="border border-gray-300 bg-white rounded-lg shadow-sm p-4">
-              {member.image && (
-                <div className="relative w-full h-48 overflow-hidden rounded-t-lg mb-4">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              )}
+              <div className="relative w-full h-48 overflow-hidden rounded-t-lg mb-4">
+                <Image
+                  src={getTeamMemberImage(member.image)}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">{member.name}</h3>
                 <p className="text-sm text-gray-600">{member.role}</p>
@@ -131,17 +129,15 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
               key={member.slug}
               className="w-full rounded-lg border border-gray-300 bg-white p-4 shadow-sm sm:w-[calc(50%_-_0.5rem)] lg:w-[calc(33.333%_-_0.667rem)]"
             >
-              {member.image && (
-                <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-              )}
+              <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg">
+                <Image
+                  src={getTeamMemberImage(member.image)}
+                  alt={member.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">{member.name}</h3>
                 <p className="text-sm text-gray-600">{member.role}</p>

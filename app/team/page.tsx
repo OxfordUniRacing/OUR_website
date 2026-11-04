@@ -276,7 +276,7 @@ export default function TeamPage() {
             </Link>
           </div>
           <p className="text-gray-600 mb-6">
-            The Chassis Team designs the structural backbone of our race car. Using SOLIDWORKS and other CAD tools, they create a lightweight yet incredibly strong frame that meets all Formula Student safety requirements while providing the foundation for all other systems.
+            The Chassis Team designs the structural backbone of our race car. Using Onshape and other CAD tools, they create a lightweight yet incredibly strong frame that meets all Formula Student safety requirements while providing the foundation for all other systems.
           </p>
           <TeamMemberCards members={chassisMembers} />
           <div className="text-sm text-gray-500">
@@ -296,7 +296,7 @@ export default function TeamPage() {
             </Link>
           </div>
           <p className="text-gray-600 mb-6">
-            The Powertrain Team is responsible for maximizing the performance of our electric motor and drivetrain. They work on motor control, inverter design, and gear ratios to ensure our car delivers exceptional acceleration and top speed on the track.
+            The Powertrain Team is responsible for maximizing the performance of our electric motor and drivetrain. They work on motor control, high voltage power delivery, and gear ratios to ensure our car delivers exceptional acceleration and top speed on the track.
           </p>
           <TeamMemberCards members={powertrainMembers} />
           <div className="text-sm text-gray-500">

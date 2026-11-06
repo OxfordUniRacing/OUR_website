@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { getTeamMembersBySubteam } from '@/lib/content'
 import SectionTitle from '@/components/common/SectionTitle'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/common/Card'
+import { TeamMemberCards } from '@/app/team/page'
 
 export const metadata: Metadata = {
   title: 'Bodywork and Aerodynamics Team',
@@ -16,7 +17,13 @@ export default function BodyworkAndAerodynamicsTeamPage() {
   return (
     <div className="py-16 sm:py-24">
       <div className="container-custom">
-        <div className="mb-12">
+        <div className="mb-16">
+          <div className="flex justify-center text-center">
+            <SectionTitle
+              title="Bodywork and Aerodynamics Team"
+              subtitle="The Bodywork and Aerodynamics Team focuses on optimizing airflow around the car. They use computational fluid dynamics (CFD) tools like Ansys to design bodywork that maximizes downforce while minimizing drag, creating a sleek and efficient race car profile."
+            />
+          </div>
           <Link
             href="/team"
             className="inline-flex items-center text-oxford-blue hover:text-accent-red mb-6 transition-colors"
@@ -26,50 +33,14 @@ export default function BodyworkAndAerodynamicsTeamPage() {
             </svg>
             Back to Team
           </Link>
-          <SectionTitle
-            title="Bodywork and Aerodynamics Team"
-            subtitle="Airflow optimization and downforce generation"
-          />
         </div>
 
-        <div className="flex justify-center">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl">
-            {teamMembers.map((member) => (
-              <Card key={member.slug} className="group hover:shadow-lg transition-shadow">
-                {member.image && (
-                  <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
-                <CardHeader className="text-center">
-                  <CardTitle className="text-lg">{member.name}</CardTitle>
-                  <CardDescription>{member.role}</CardDescription>
-                  <div className="text-sm text-gray-500">
-                    {member.course} • Year {member.year}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-gray-600 text-sm line-clamp-3">
-                    {member.bio}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+        <div className="mb-16">
+          <TeamMemberCards members={teamMembers} displayExcessNoImage={true} />
+          <div className="text-sm text-gray-500">
+            {teamMembers.length} total members
           </div>
         </div>
-
-        {teamMembers.length === 0 && (
-          <div className="text-center bg-gray-50 rounded-lg p-12">
-            <p className="text-gray-500">
-              Team member information will appear here once added through the CMS
-            </p>
-          </div>
-        )}
       </div>
     </div>
   )

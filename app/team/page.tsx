@@ -1,7 +1,9 @@
+import fs from 'fs'
+import path from 'path'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getTeamMembers, getTeamMembersBySubteam } from '@/lib/content'
+import { getTeamMembers, getTeamMembersBySubteam, getTeamMemberImage } from '@/lib/content'
 import SectionTitle from '@/components/common/SectionTitle'
 
 export const metadata: Metadata = {
@@ -16,11 +18,13 @@ const roleOrder = [
 	'Trackside & Operations',
 	'Technical Manager',
 	'Aerodynamics & Vehicle Performance Lead',
-	'Chief Engineer'
+	'Chief Engineer',
+  'Welfare & Inclusion Officer'
 ]
 
 // Helper component to display team member cards
-function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembers?: number }) {
+
+export function TeamMemberCards({ members, maxMembers = 2, displayExcessNoImage = false }: { members: any[], maxMembers?: number, displayExcessNoImage?: boolean }) {
   // Sort members by roleOrder, then alphabetically by name
   const sortedMembers = [...members].sort((a, b) => {
     const aIndex = roleOrder.indexOf(a.role)
@@ -31,10 +35,12 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
 
     return aOrder - bOrder || a.name.localeCompare(b.name)
   })
+
+  
   const displayMembers = sortedMembers.slice(0, maxMembers)
+  const excessMembers = sortedMembers.slice(maxMembers)
 
-
-  if (displayMembers.length === 0) {
+  if (displayMembers.length === 0 && (!displayExcessNoImage || excessMembers.length === 0)) {
     return (
       <div className="text-center bg-gray-50 rounded-lg p-8 text-gray-500">
         Team member information will appear here once added through the CMS
@@ -42,7 +48,7 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
     )
   }
 
-  // Split into first row (2 items) and remaining rows (3 items each)
+  // Split image members into first row (2 items) and remaining rows (3 items each)
   const firstRow = displayMembers.slice(0, 2)
 
   const remainingCount = displayMembers.length - firstRow.length
@@ -57,9 +63,15 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
     displayMembers.length - finalRowCount
   )
 
+  // Split excess members into main rows (3 items each) and a final row
+  const mainRowCount = Math.floor(excessMembers.length / 3) * 3
+
+  const mainRowsEM = excessMembers.slice(0, mainRowCount)
+  const finalRowEM = excessMembers.slice(mainRowCount)
+
   return (
     <div className="flex flex-col items-center mb-6 gap-4">
-      {/* First row with up to 2 cards */}
+      {/* First row with up to 2 image cards */}
       {firstRow.length > 0 && (
         <div className="flex w-full max-w-5xl flex-wrap justify-center gap-4">
           {firstRow.map((member) => (
@@ -67,17 +79,15 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
               key={member.slug}
               className="w-full rounded-lg border border-gray-300 bg-white p-4 shadow-sm sm:w-[calc(50%_-_0.5rem)] lg:w-[calc(33.333%_-_0.667rem)]"
             >
-              {member.image && (
-                <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-              )}
+              <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg">
+                <Image
+                  src={getTeamMemberImage(member.image)}
+                  alt={member.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">{member.name}</h3>
                 <p className="text-sm text-gray-600">{member.role}</p>
@@ -93,21 +103,19 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
         </div>
       )}
 
-      {/* Remaining rows with 3 cards */}
+      {/* Remaining image rows with 3 cards */}
       {middleRows.length > 0 && (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl w-full">
           {middleRows.map((member) => (
             <div key={member.slug} className="border border-gray-300 bg-white rounded-lg shadow-sm p-4">
-              {member.image && (
-                <div className="relative w-full h-48 overflow-hidden rounded-t-lg mb-4">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              )}
+              <div className="relative w-full h-48 overflow-hidden rounded-t-lg mb-4">
+                <Image
+                  src={getTeamMemberImage(member.image)}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">{member.name}</h3>
                 <p className="text-sm text-gray-600">{member.role}</p>
@@ -123,7 +131,7 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
         </div>
       )}
 
-      {/* Final row with 1–3 cards */}
+      {/* Final image row */}
       {finalRow.length > 0 && (
         <div className="flex w-full max-w-5xl flex-wrap justify-center gap-4">
           {finalRow.map((member) => (
@@ -131,17 +139,15 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
               key={member.slug}
               className="w-full rounded-lg border border-gray-300 bg-white p-4 shadow-sm sm:w-[calc(50%_-_0.5rem)] lg:w-[calc(33.333%_-_0.667rem)]"
             >
-              {member.image && (
-                <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-              )}
+              <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg">
+                <Image
+                  src={getTeamMemberImage(member.image)}
+                  alt={member.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">{member.name}</h3>
                 <p className="text-sm text-gray-600">{member.role}</p>
@@ -155,6 +161,54 @@ function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembe
             </div>
           ))}
         </div>
+      )}
+
+      {/* Excess members - displayed without images */}
+      {displayExcessNoImage && (
+        <>
+          {/* Main rows with 3 cards */}
+          {mainRowsEM.length > 0 && (
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl w-full">
+              {mainRowsEM.map((member) => (
+                <div key={member.slug} className="border border-gray-300 bg-white rounded-lg shadow-sm p-4">
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold">{member.name}</h3>
+                    <p className="text-sm text-gray-600">{member.role}</p>
+                    <div className="text-sm text-gray-500">
+                      {member.course} • Year {member.year}
+                    </div>
+                    {member.bio && (
+                      <div className="text-gray-600 text-sm mt-2">{member.bio}</div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Final row with remaining 1–2 cards */}
+          {finalRowEM.length > 0 && (
+            <div className="flex w-full max-w-5xl flex-wrap justify-center gap-4">
+              {finalRowEM.map((member) => (
+                <div
+                  key={member.slug}
+                  className="w-full rounded-lg border border-gray-300 bg-white p-4 shadow-sm sm:w-[calc(50%_-_0.5rem)] lg:w-[calc(33.333%_-_0.667rem)]"
+                >
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold">{member.name}</h3>
+                    <p className="text-sm text-gray-600">{member.role}</p>
+                    <div className="text-sm text-gray-500">
+                      {member.course} • Year {member.year}
+                    </div>
+                    {member.bio && (
+                      <div className="mt-2 text-sm text-gray-600">{member.bio}</div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
       )}
     </div>
   )
@@ -280,7 +334,7 @@ export default function TeamPage() {
             </Link>
           </div>
           <p className="text-gray-600 mb-6">
-            The Chassis Team designs the structural backbone of our race car. Using SOLIDWORKS and other CAD tools, they create a lightweight yet incredibly strong frame that meets all Formula Student safety requirements while providing the foundation for all other systems.
+            The Chassis Team designs the structural backbone of our race car. Using Onshape and other CAD tools, they create a lightweight yet incredibly strong frame that meets all Formula Student safety requirements while providing the foundation for all other systems.
           </p>
           <TeamMemberCards members={chassisMembers} />
           <div className="text-sm text-gray-500">
@@ -300,7 +354,7 @@ export default function TeamPage() {
             </Link>
           </div>
           <p className="text-gray-600 mb-6">
-            The Powertrain Team is responsible for maximizing the performance of our electric motor and drivetrain. They work on motor control, inverter design, and gear ratios to ensure our car delivers exceptional acceleration and top speed on the track.
+            The Powertrain Team is responsible for maximizing the performance of our electric motor and drivetrain. They work on motor control, high voltage power delivery, and gear ratios to ensure our car delivers exceptional acceleration and top speed on the track.
           </p>
           <TeamMemberCards members={powertrainMembers} />
           <div className="text-sm text-gray-500">
@@ -362,7 +416,7 @@ export default function TeamPage() {
           <p className="text-gray-600 mb-6">
             The Wheel Assembly Team is responsible for the design and integration of our suspension and steering systems. They work closely with the Chassis Team to ensure optimal handling characteristics and implement innovative solutions for wheel mounting and alignment.
           </p>
-          <TeamMemberCards members={wheelAssemblyMembers} />
+          <TeamMemberCards members={wheelAssemblyMembers} maxMembers={3} />
           <div className="text-sm text-gray-500">
             {wheelAssemblyMembers.length} total members
           </div>
@@ -382,7 +436,7 @@ export default function TeamPage() {
           <p className="text-gray-600 mb-6">
             The Operations Team manages the logistics, manufacturing and communications that keep our project running smoothly. From sourcing materials and organizing build schedules to managing social media and corporate sponsorship, they ensure that every team has what they need to succeed and that our car is built to the highest quality standards.
           </p>
-          <TeamMemberCards members={operationsMembers} />
+          <TeamMemberCards members={operationsMembers} maxMembers={3} />
           <div className="text-sm text-gray-500">
             {operationsMembers.length} total members
           </div>

@@ -22,7 +22,7 @@ const roleOrder = [
 ]
 
 // Helper component to display team member cards
-function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembers?: number }) {
+export function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembers?: number }) {
   // Sort members by roleOrder, then alphabetically by name
   const sortedMembers = [...members].sort((a, b) => {
     const aIndex = roleOrder.indexOf(a.role)

@@ -18,11 +18,13 @@ const roleOrder = [
 	'Trackside & Operations',
 	'Technical Manager',
 	'Aerodynamics & Vehicle Performance Lead',
-	'Chief Engineer'
+	'Chief Engineer',
+  'Welfare & Inclusion Officer'
 ]
 
 // Helper component to display team member cards
-export function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], maxMembers?: number }) {
+
+export function TeamMemberCards({ members, maxMembers = 2, displayExcessNoImage = false }: { members: any[], maxMembers?: number, displayExcessNoImage?: boolean }) {
   // Sort members by roleOrder, then alphabetically by name
   const sortedMembers = [...members].sort((a, b) => {
     const aIndex = roleOrder.indexOf(a.role)
@@ -33,10 +35,14 @@ export function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], m
 
     return aOrder - bOrder || a.name.localeCompare(b.name)
   })
+
+  
   const displayMembers = sortedMembers.slice(0, maxMembers)
+  const excessMembers = sortedMembers.slice(maxMembers)
+  
+  console.log(members, maxMembers, displayMembers, excessMembers)
 
-
-  if (displayMembers.length === 0) {
+  if (displayMembers.length === 0 && (!displayExcessNoImage || excessMembers.length === 0)) {
     return (
       <div className="text-center bg-gray-50 rounded-lg p-8 text-gray-500">
         Team member information will appear here once added through the CMS
@@ -44,7 +50,7 @@ export function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], m
     )
   }
 
-  // Split into first row (2 items) and remaining rows (3 items each)
+  // Split image members into first row (2 items) and remaining rows (3 items each)
   const firstRow = displayMembers.slice(0, 2)
 
   const remainingCount = displayMembers.length - firstRow.length
@@ -59,9 +65,15 @@ export function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], m
     displayMembers.length - finalRowCount
   )
 
+  // Split excess members into main rows (3 items each) and a final row
+  const mainRowCount = Math.floor(excessMembers.length / 3) * 3
+
+  const mainRowsEM = excessMembers.slice(0, mainRowCount)
+  const finalRowEM = excessMembers.slice(mainRowCount)
+
   return (
     <div className="flex flex-col items-center mb-6 gap-4">
-      {/* First row with up to 2 cards */}
+      {/* First row with up to 2 image cards */}
       {firstRow.length > 0 && (
         <div className="flex w-full max-w-5xl flex-wrap justify-center gap-4">
           {firstRow.map((member) => (
@@ -93,7 +105,7 @@ export function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], m
         </div>
       )}
 
-      {/* Remaining rows with 3 cards */}
+      {/* Remaining image rows with 3 cards */}
       {middleRows.length > 0 && (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl w-full">
           {middleRows.map((member) => (
@@ -121,7 +133,7 @@ export function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], m
         </div>
       )}
 
-      {/* Final row with 1–3 cards */}
+      {/* Final image row */}
       {finalRow.length > 0 && (
         <div className="flex w-full max-w-5xl flex-wrap justify-center gap-4">
           {finalRow.map((member) => (
@@ -151,6 +163,54 @@ export function TeamMemberCards({ members, maxMembers = 3 }: { members: any[], m
             </div>
           ))}
         </div>
+      )}
+
+      {/* Excess members - displayed without images */}
+      {displayExcessNoImage && (
+        <>
+          {/* Main rows with 3 cards */}
+          {mainRowsEM.length > 0 && (
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl w-full">
+              {mainRowsEM.map((member) => (
+                <div key={member.slug} className="border border-gray-300 bg-white rounded-lg shadow-sm p-4">
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold">{member.name}</h3>
+                    <p className="text-sm text-gray-600">{member.role}</p>
+                    <div className="text-sm text-gray-500">
+                      {member.course} • Year {member.year}
+                    </div>
+                    {member.bio && (
+                      <div className="text-gray-600 text-sm mt-2">{member.bio}</div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Final row with remaining 1–2 cards */}
+          {finalRowEM.length > 0 && (
+            <div className="flex w-full max-w-5xl flex-wrap justify-center gap-4">
+              {finalRowEM.map((member) => (
+                <div
+                  key={member.slug}
+                  className="w-full rounded-lg border border-gray-300 bg-white p-4 shadow-sm sm:w-[calc(50%_-_0.5rem)] lg:w-[calc(33.333%_-_0.667rem)]"
+                >
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold">{member.name}</h3>
+                    <p className="text-sm text-gray-600">{member.role}</p>
+                    <div className="text-sm text-gray-500">
+                      {member.course} • Year {member.year}
+                    </div>
+                    {member.bio && (
+                      <div className="mt-2 text-sm text-gray-600">{member.bio}</div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
       )}
     </div>
   )
@@ -358,7 +418,7 @@ export default function TeamPage() {
           <p className="text-gray-600 mb-6">
             The Wheel Assembly Team is responsible for the design and integration of our suspension and steering systems. They work closely with the Chassis Team to ensure optimal handling characteristics and implement innovative solutions for wheel mounting and alignment.
           </p>
-          <TeamMemberCards members={wheelAssemblyMembers} />
+          <TeamMemberCards members={wheelAssemblyMembers} maxMembers={3} />
           <div className="text-sm text-gray-500">
             {wheelAssemblyMembers.length} total members
           </div>
@@ -378,7 +438,7 @@ export default function TeamPage() {
           <p className="text-gray-600 mb-6">
             The Operations Team manages the logistics, manufacturing and communications that keep our project running smoothly. From sourcing materials and organizing build schedules to managing social media and corporate sponsorship, they ensure that every team has what they need to succeed and that our car is built to the highest quality standards.
           </p>
-          <TeamMemberCards members={operationsMembers} />
+          <TeamMemberCards members={operationsMembers} maxMembers={3} />
           <div className="text-sm text-gray-500">
             {operationsMembers.length} total members
           </div>

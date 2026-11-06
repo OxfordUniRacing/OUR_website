@@ -35,7 +35,7 @@ export default function LeadershipTeamPage() {
         </div>
 
         <div className="mb-16">
-          <TeamMemberCards members={teamMembers} maxMembers={6} />
+          <TeamMemberCards members={teamMembers} maxMembers={6} displayExcessNoImage={true} />
           <div className="text-sm text-gray-500">
             {teamMembers.length} total members
           </div>

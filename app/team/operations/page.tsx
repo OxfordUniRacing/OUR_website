@@ -36,7 +36,7 @@ export default function OperationsTeamPage() {
         </div>
 
         <div className="mb-16">
-          <TeamMemberCards members={teamMembers} />
+          <TeamMemberCards members={teamMembers} maxMembers={3} displayExcessNoImage={true} />
           <div className="text-sm text-gray-500">
             {teamMembers.length} total members
           </div>

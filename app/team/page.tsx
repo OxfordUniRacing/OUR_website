@@ -39,8 +39,6 @@ export function TeamMemberCards({ members, maxMembers = 2, displayExcessNoImage 
   
   const displayMembers = sortedMembers.slice(0, maxMembers)
   const excessMembers = sortedMembers.slice(maxMembers)
-  
-  console.log(members, maxMembers, displayMembers, excessMembers)
 
   if (displayMembers.length === 0 && (!displayExcessNoImage || excessMembers.length === 0)) {
     return (

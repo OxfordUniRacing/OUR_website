@@ -75,6 +75,14 @@ export function getTeamMember(subteam: string, slug: string): TeamMember | null 
   }
 }
 
+export function getTeamMemberImage(image: string | undefined) {
+  if (!image) return '/images/team/default.svg'
+
+  const imagePath = path.join(process.cwd(), 'public', image)
+
+  return fs.existsSync(imagePath) ? image : '/images/team/default.svg'
+}
+
 export function getCars(): Car[] {
   const carsDir = path.join(contentDirectory, 'cars')
   if (!fs.existsSync(carsDir)) return []

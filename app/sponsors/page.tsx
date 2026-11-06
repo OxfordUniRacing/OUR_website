@@ -37,7 +37,7 @@ export default function SponsorsPage() {
             Become a Sponsor
           </Link>
           <a
-            href="/documents/Oxford%20Uni%20Racing%20Sponsorship%20Prospectus%20%5BSep%2026%5D.pdf"
+            href="/documents/Oxford%20Uni%20Racing%20Sponsorship%20Prospectus%20%5BOct%2026%5D.pdf"
             download
             className="btn-outline px-8 py-3 text-lg font-medium"
           >
@@ -141,7 +141,7 @@ export default function SponsorsPage() {
               Become a Sponsor
             </Link>
             <a
-              href="/documents/Oxford%20Uni%20Racing%20Sponsorship%20Prospectus%20%5BSep%2026%5D.pdf"
+              href="/documents/Oxford%20Uni%20Racing%20Sponsorship%20Prospectus%20%5BOct%2026%5D.pdf"
               download
               className="btn-outline px-8 py-3 text-lg font-medium"
             >

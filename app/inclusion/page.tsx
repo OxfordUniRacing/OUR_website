@@ -11,51 +11,110 @@ const demographics = [
   {
     label: 'Gender',
     items: [
-      { name: 'Men', value: 32 },
-      { name: 'Women', value: 8 },
+      { name: 'Men', value: 38 },
+      { name: 'Women', value: 13 },
       { name: 'Non-binary', value: 1 },
     ],
-  },
-  {
-    label: 'Ethnicity',
-    items: [
-      { name: 'White', value: 20 },
-      { name: 'Asian / Asian British', value: 14 },
-      { name: 'Mixed background', value: 4 },
-      { name: 'Arab', value: 1 },
-      { name: 'Other', value: 2 },
-    ],
-  },
-  {
-    label: 'International members',
-    items: [
-      { name: 'UK domiciled', value: 27 },
-      { name: 'International', value: 14 },
-    ],
-  },
-  {
-    label: 'Secondary schooling',
-    items: [
-      { name: 'State comprehensive', value: 17 },
-      { name: 'State grammar', value: 7 },
-      { name: 'Private', value: 11 },
-      { name: 'Other / prefer not to say', value: 6 },
-    ],
+    total: 52
   },
   {
     label: 'LGBTQ+',
     items: [
-      { name: 'LGB+', value: 6 },
-      { name: 'Heterosexual', value: 32 },
+      { name: 'Heterosexual', value: 42 },
+      { name: 'LGBTQ+', value: 5 },
+      { name: 'Prefer not to say', value: 4 },
+    ],
+    total: 51
+  },
+  {
+    label: 'Ethnicity',
+    items: [
+      { name: 'White', value: 21 },
+      { name: 'Chinese', value: 10 },
+      { name: 'Indian', value: 5 },
+      { name: 'Mixed - White / Asian', value: 4 },
+      { name: 'Pakistani', value: 2 },
+      { name: 'Korean', value: 2 },
+      { name: 'Mixed - White / Black', value: 1 },
+      { name: 'Black', value: 1 },
+      { name: 'Indonesian', value: 1 },
+      { name: 'Malaysian', value: 1 },
+      { name: 'Filipino', value: 1 },
+      { name: 'Prefer not to say', value: 3 }
+    ],
+    total: 52
+  },
+  {
+    label: 'Religion or belief',
+    items: [
+      { name: 'Atheist/no religion or belief', value: 29 },
+      { name: 'Christian', value: 9 },
+      { name: 'Hindu', value: 3 },
+      { name: 'Muslim', value: 3 },
+      { name: 'Buddhist', value: 2 },
+      { name: 'Catholic', value: 2 },
       { name: 'Prefer not to say', value: 3 },
     ],
+    total: 51
   },
+  // {
+  //   label: 'International members',
+  //   items: [
+  //     { name: 'UK domiciled', value: 27 },
+  //     { name: 'International', value: 14 },
+  //   ],
+  // },
+  {
+    label: 'Secondary schooling (11-16)',
+    items: [
+      { name: 'School outside the UK', value: 8 },
+      { name: 'UK independent or fee-paying school', value: 6 },
+      { name: 'UK state-funded grammar or selective school', value: 5 },
+      { name: 'UK state-funded comprehensive school', value: 4 },
+      { name: 'UK independent school attended on a full bursary', value: 1 },
+      { name: 'Home educated', value: 1 },
+      // { name: 'Other / prefer not to say', value: 6 },
+    ],
+    total: 25
+  },
+  {
+    label: 'Pre-degree schooling (16-18)',
+    items: [
+      { name: 'UK state-funded school sixth form', value: 10 },
+      { name: 'School outside the UK', value: 7 },
+      { name: 'UK independent or fee-paying school', value: 5 },
+      { name: 'UK sixth form college', value: 2 },
+      { name: 'UK independent school attended on a full bursary', value: 1 },
+      // { name: 'Home educated', value: 1 },
+      // { name: 'Other / prefer not to say', value: 6 },
+    ],
+    total: 25
+  },
+  {
+    label: 'Subject',
+    items: [
+      { name: 'Engineering', value: 51 },
+      { name: 'Mathematics', value: 4 },
+      { name: 'Physics', value: 4 },
+      { name: 'Humanities', value: 4},
+      { name: 'Mathematics & Computer Science', value: 2 },
+    ],
+    total: 65
+  },
+  {
+    label: 'Year Group',
+    items: [
+      { name: 'First Year', value: 37 },
+      { name: 'Second Year', value: 15 },
+      { name: 'Third Year', value: 7 },
+      { name: 'Fourth Year', value: 5 },
+    ],
+    total: 64
+  }
 ]
 
-const TOTAL = 41
-
-function Bar({ name, value }: { name: string; value: number }) {
-  const pct = Math.round((value / TOTAL) * 100)
+function Bar({ name, value, total }: { name: string; value: number; total: number }) {
+  const pct = Math.round((value / total) * 100)
   return (
     <div className="mb-2">
       <div className="flex justify-between text-sm text-gray-700">
@@ -155,9 +214,9 @@ export default function InclusionPage() {
               Where we are today
             </h2>
             <p className="mb-6 text-sm text-gray-500">
-              Results of an anonymous team-wide DEI survey, November 2025.
-              n&nbsp;=&nbsp;41 responses. Percentages may not sum to 100%
-              due to rounding and prefer-not-to-say responses.
+              Results of an anonymous team-wide DEI survey, November 2026.
+              {/* n&nbsp;=&nbsp;52 responses and a team-wide course survey, n&nbsp;=&nbsp;65. 
+              Percentages may not sum to 100% due to rounding and prefer-not-to-say responses. */}
             </p>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               {demographics.map((group) => (
@@ -166,7 +225,7 @@ export default function InclusionPage() {
                     {group.label}
                   </h3>
                   {group.items.map((it) => (
-                    <Bar key={it.name} name={it.name} value={it.value} />
+                    <Bar key={it.name} name={it.name} value={it.value} total={group.total} />
                   ))}
                 </div>
               ))}
@@ -174,8 +233,8 @@ export default function InclusionPage() {
             <p className="mt-6 text-sm text-gray-600">
               We are honest about where we still fall short — particularly
               on gender balance, where women and non-binary members make
-              up roughly 22% of survey respondents. Closing that gap is an
-              explicit goal for the 2026 recruitment cycle.
+              up roughly 27% of survey respondents. Closing that gap is an
+              explicit goal for the 2027 recruitment cycle.
             </p>
           </section>
 

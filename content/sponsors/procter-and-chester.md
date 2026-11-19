@@ -1,6 +1,6 @@
 ---
 name: Procter and Chester
-logo: /images/sponsors/PCM_Secondary_Logo_Green.png
+logo: /images/sponsors/current/PCM.png
 website: 'https://www.pcm-uk.com'
 since: 2026
 order: 5

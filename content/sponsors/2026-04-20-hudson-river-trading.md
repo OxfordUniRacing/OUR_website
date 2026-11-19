@@ -1,6 +1,6 @@
 ---
 name: Hudson River Trading
-logo: /images/sponsors/01-HRT-Primary-Logo-with-®-Q2-2024.svg
+logo: /images/sponsors/current/hudson_river_trading.svg
 website: https://www.hudsonrivertrading.com
 since: 2026
 order: 2

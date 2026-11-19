@@ -1,6 +1,6 @@
 ---
 name: Davies Craig
-logo: /images/sponsors/davies_craig_collection_image.webp
+logo: /images/sponsors/current/davies_craig.webp
 website: 'https://daviescraig.com'
 since: 2025
 order: 17

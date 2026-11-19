@@ -1,6 +1,6 @@
 ---
 name: McGill Motorsports
-logo: /images/sponsors/mcgill.svg
+logo: /images/sponsors/current/mcgill.svg
 website: 'https://www.mcgillmotorsport.com/'
 since: 2025
 order: 13

@@ -1,6 +1,6 @@
 ---
 name: Hirose Electric Europe B.V.
-logo: /images/sponsors/hiroseelectric.png
+logo: /images/sponsors/current/hirose.webp
 website: 'https://www.hirose.com/eu/'
 order: 11
 ---

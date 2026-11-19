@@ -1,6 +1,6 @@
 ---
 name: Kern Slade Engineering
-logo: /images/sponsors/kse-full-logo-500x268-1-inverted.png
+logo: /images/sponsors/current/kse.png
 website: 'https://www.kern-slade.com'
 since: 2025
 order: 7

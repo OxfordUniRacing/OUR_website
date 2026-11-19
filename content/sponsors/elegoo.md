@@ -1,6 +1,6 @@
 ---
 name: Elegoo
-logo: /images/sponsors/elegoo.svg
+logo: /images/sponsors/current/elegoo.svg
 website: 'https://www.elegoo.com/en-gb'
 order: 12
 ---

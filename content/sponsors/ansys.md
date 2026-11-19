@@ -1,6 +1,6 @@
 ---
 name: Ansys
-logo: /images/sponsors/Ansys_logo.svg
+logo: /images/sponsors/current/Ansys.svg
 website: 'https://ansys.synopsys.com/en-gb'
 order: 8
 ---

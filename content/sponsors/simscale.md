@@ -1,6 +1,6 @@
 ---
 name: SimScale
-logo: /images/sponsors/SimScale.svg
+logo: /images/sponsors/current/SimScale.svg
 website: 'https://www.simscale.com'
 since: 2026
 order: 6

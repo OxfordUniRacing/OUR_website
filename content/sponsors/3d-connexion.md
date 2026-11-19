@@ -1,6 +1,6 @@
 ---
 name: 3Dconnexion
-logo: /images/sponsors/3dx_companylogo_black.png
+logo: /images/sponsors/current/3dx.png
 website: 'https://3dconnexion.com/uk/'
 order: 10
 ---

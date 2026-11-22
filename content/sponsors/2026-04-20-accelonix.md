@@ -1,6 +1,6 @@
 ---
 name: Accelonix
-logo: /images/sponsors/Logo-accelonix-1.png
+logo: /images/sponsors/current/accelonix.png
 website: 'https://accelonix.co.uk'
 since: 2026
 order: 10

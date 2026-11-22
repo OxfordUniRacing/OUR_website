@@ -2,6 +2,6 @@
 name: Elegoo
 logo: /images/sponsors/current/elegoo.svg
 website: 'https://www.elegoo.com/en-gb'
-order: 12
+order: 13
 ---
 Elegoo provides the 3D printers that give our team rapid prototyping and additive manufacture capabilities. The printer’s advanced feature set allows us to be creative with materials in our new battery design.

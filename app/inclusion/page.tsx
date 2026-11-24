@@ -18,7 +18,7 @@ const demographics = [
     total: 52
   },
   {
-    label: 'LGBTQ+',
+    label: 'Sexual Orientation',
     items: [
       { name: 'Heterosexual', value: 42 },
       { name: 'LGBTQ+', value: 5 },
@@ -45,7 +45,7 @@ const demographics = [
     total: 52
   },
   {
-    label: 'Religion or belief',
+    label: 'Religious Beliefs',
     items: [
       { name: 'Atheist/no religion or belief', value: 29 },
       { name: 'Christian', value: 9 },
@@ -65,7 +65,7 @@ const demographics = [
   //   ],
   // },
   {
-    label: 'Secondary schooling (11-16)',
+    label: 'Secondary Schooling (11-16)',
     items: [
       { name: 'School outside the UK', value: 8 },
       { name: 'UK independent or fee-paying school', value: 6 },
@@ -78,7 +78,7 @@ const demographics = [
     total: 25
   },
   {
-    label: 'Pre-degree schooling (16-18)',
+    label: 'Pre-Degree Schooling (16-18)',
     items: [
       { name: 'UK state-funded school sixth form', value: 10 },
       { name: 'School outside the UK', value: 7 },

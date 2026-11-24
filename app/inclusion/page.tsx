@@ -57,13 +57,6 @@ const demographics = [
     ],
     total: 51
   },
-  // {
-  //   label: 'International members',
-  //   items: [
-  //     { name: 'UK domiciled', value: 27 },
-  //     { name: 'International', value: 14 },
-  //   ],
-  // },
   {
     label: 'Secondary Schooling (11-16)',
     items: [
@@ -73,7 +66,6 @@ const demographics = [
       { name: 'UK state-funded comprehensive school', value: 4 },
       { name: 'UK independent school attended on a full bursary', value: 1 },
       { name: 'Home educated', value: 1 },
-      // { name: 'Other / prefer not to say', value: 6 },
     ],
     total: 25
   },
@@ -85,18 +77,17 @@ const demographics = [
       { name: 'UK independent or fee-paying school', value: 5 },
       { name: 'UK sixth form college', value: 2 },
       { name: 'UK independent school attended on a full bursary', value: 1 },
-      // { name: 'Home educated', value: 1 },
-      // { name: 'Other / prefer not to say', value: 6 },
     ],
     total: 25
   },
   {
     label: 'Subject',
     items: [
-      { name: 'Engineering', value: 51 },
+      { name: 'Engineering', value: 48 },
       { name: 'Mathematics', value: 4 },
       { name: 'Physics', value: 4 },
       { name: 'Humanities', value: 4},
+      { name: 'Materials Science', value: 3 },
       { name: 'Mathematics & Computer Science', value: 2 },
     ],
     total: 65

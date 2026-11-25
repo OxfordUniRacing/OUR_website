@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Button from '@/components/common/Button'
+import SocialLinks from '@/components/contact/SocialLinks'
 
 export const metadata: Metadata = {
   title: 'About Oxford University Racing',
@@ -139,8 +140,11 @@ export default function AboutPage() {
               <a href="mailto:our@eng.ox.ac.uk">our@eng.ox.ac.uk</a>
             </Button>
           </div>
-          <div className="mt-8 text-sm text-gray-500">
-            Follow us on social media: Facebook | Instagram | Twitter
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold text-oxford-blue mb-6">Connect</h3>
+              <div className="flex justify-center space-x-6">
+                <SocialLinks variant="body" />
+              </div>
           </div>
         </section>
       </div>

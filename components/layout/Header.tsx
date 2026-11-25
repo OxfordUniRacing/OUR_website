@@ -32,10 +32,10 @@ export default function Header() {
         {/* CTA Button */}
         <div className="hidden lg:block">
           <Link
-            href="/contact"
+            href="https://www.campaign.ox.ac.uk/mag?id=d3e9f0c8-c3c4-4cc6-beed-328032e582ea"
             className="bg-white text-oxford-blue hover:bg-gray-100 px-4 py-2 rounded text-sm font-medium transition-colors"
           >
-            Join the Team
+            Donate
           </Link>
         </div>
       </div>

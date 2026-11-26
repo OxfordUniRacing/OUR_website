@@ -206,8 +206,9 @@ This is configured in Cloudflare Pages under Settings → Environment variables 
 - Use TypeScript for all new code
 - Follow existing component patterns
 - Use Tailwind CSS classes for styling
-- Test on multiple screen sizes
+- Test on multiple screen sizes (recommended: Firefox Responsive Design Mode)
 - Ensure accessibility standards are met
+- Test all code both on `npm run dev` and `npm run build` (some errors may only appear in build)
 
 ## Support
 

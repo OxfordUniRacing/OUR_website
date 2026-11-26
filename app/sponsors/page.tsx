@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getSponsors } from '@/lib/content'
 import SectionTitle from '@/components/common/SectionTitle'
+import { config } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: 'OUR Sponsors',
@@ -37,7 +38,7 @@ export default function SponsorsPage() {
             Become a Sponsor
           </Link>
           <a
-            href="/documents/Oxford%20Uni%20Racing%20Sponsorship%20Prospectus%20%5BOct%2026%5D.pdf"
+            href={config.sponsorshipProspectus}
             download
             className="btn-outline px-8 py-3 text-lg font-medium"
           >
@@ -141,7 +142,7 @@ export default function SponsorsPage() {
               Become a Sponsor
             </Link>
             <a
-              href="/documents/Oxford%20Uni%20Racing%20Sponsorship%20Prospectus%20%5BOct%2026%5D.pdf"
+              href={config.sponsorshipProspectus}
               download
               className="btn-outline px-8 py-3 text-lg font-medium"
             >

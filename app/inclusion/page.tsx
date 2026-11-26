@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { config } from "@/lib/config";
+import { toTitleCase } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: 'Diversity & Inclusion | Oxford University Racing',
@@ -174,14 +176,14 @@ export default function InclusionPage() {
               Welfare &amp; Inclusion Officer
             </h2>
             <p className="mb-4">
-              <span className="font-semibold">Sky Alexander</span>, serves as Oxford
-              University Racing&apos;s Welfare &amp; Inclusion Officer.
-              She is the team&apos;s confidential first point of contact
+              <span className="font-semibold">{config.welfareOfficer.fullName}</span>, serves as Oxford
+              University Racing&apos;s Welfare &amp; Inclusion Officer.{" "}
+              {toTitleCase(config.welfareOfficer.subjectPronoun)} is the team&apos;s confidential first point of contact
               for any member who wants to raise a concern about welfare,
               inclusion, or conduct.
             </p>
             <p className="mb-4">
-              Concerns can be raised informally with Sky, formally in
+              Concerns can be raised informally with {config.welfareOfficer.firstName}, formally in
               writing, or externally to the Department of
               Engineering Science Welfare Lead or the University
               Harassment Service. Reports are kept confidential
@@ -191,7 +193,7 @@ export default function InclusionPage() {
             <p>
               Confidential contact:{' '}
               <Link
-                href="https://forms.cloud.microsoft/e/PMw1TwrhrL"
+                href={config.welfareOfficer.contactFormLink}
                 className="underline text-[#FFAB13] hover:text-[#FFAB13]/90"
               >
                 Concerns & Welfare Form
@@ -291,7 +293,7 @@ export default function InclusionPage() {
             <p className="mb-4 text-gray-700">
               If you are a prospective member, a partner organisation, or
               a journalist with questions about our inclusion work, we are
-              happy to talk. For welfare concerns, contact Jon directly at
+              happy to talk. For welfare concerns, contact {config.welfareOfficer.firstName} directly at
               the address above. For everything else, use the team
               contact form.
             </p>
